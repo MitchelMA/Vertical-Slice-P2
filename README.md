@@ -4,6 +4,8 @@ In deze periode moeten wij (Game-developers en Game-artists) werken aan ~ 10 sec
   2. Hades
   3. Ori  
 
+**Daaruit is Hades aan ons gewezen.**
+
 ## Groepsleden
 Deze groep bestaat uit vier Game-artists en vier Game-developers. (groep 10)
 ### Game-Artists
