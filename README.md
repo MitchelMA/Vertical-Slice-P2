@@ -17,3 +17,6 @@ Deze groep bestaat uit vier Game-artists en vier Game-developers. (groep 10)
   - Leon Kruijer
   - Mitchel Vonk
   - Tijmen Koenis
+
+## Trello
+Onze [Trello-pagina](https://trello.com/b/tspaB2TT/vertical-slice)
