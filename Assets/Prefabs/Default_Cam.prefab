@@ -59,8 +59,8 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
-  orthographic size: 5
+  orthographic: 1
+  orthographic size: 12
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9177a459beef4c4eb58ea679de0ff45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camDist: 25
+  camDist: 100
   adjustSpeed: 10
-  camAngles: {x: 60, y: 120}
+  camAngles: {x: 225, y: 310.7}
   follows: {fileID: 0}
