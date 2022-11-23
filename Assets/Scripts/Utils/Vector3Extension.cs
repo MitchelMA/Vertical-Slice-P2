@@ -13,11 +13,11 @@ public static class Vector3Extension
    /// <param name="phi">Angle in radians</param>
    /// <param name="theta">Angle in radians</param>
    /// <returns>The corresponding Vector3 of the given angles</returns>
-   public static Vector3 FromAngles(float phi, float theta)
+   public static Vector3 FromSpherical(float r, float phi, float theta)
    {
-      float x = Mathf.Sin(phi) * Mathf.Cos(theta);
-      float y = Mathf.Sin(phi) * Mathf.Sin(theta);
-      float z = Mathf.Cos(phi);
+      float x = r * Mathf.Sin(phi) * Mathf.Cos(theta);
+      float y = r * Mathf.Sin(phi) * Mathf.Sin(theta);
+      float z = r * Mathf.Cos(phi);
       
       return new Vector3(x, y, z);
    }
