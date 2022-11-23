@@ -7,6 +7,7 @@ public class Walking : MonoBehaviour
     public float speed = 5f;
     public float horizontalInput;
     public float verticalInput;
+    public Rigidbody rb;
 
 
 
