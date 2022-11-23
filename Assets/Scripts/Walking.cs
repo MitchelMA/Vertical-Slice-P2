@@ -4,22 +4,30 @@ using UnityEngine;
 
 public class Walking : MonoBehaviour
 {
-    public float speed = 5f;
-    public float horizontalInput;
-    public float verticalInput;
-    public Rigidbody rb;
+    [SerializeField] private Rigidbody rb;
+    [SerializeField] private float speed = 5;
+    private Vector3 input;
 
 
-
-    // Start is called before the first frame update
-    void Start()
+    private void Update()
     {
-        
+        getInput();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
-        
+        move();
     }
+
+    void getInput()
+    {
+        input = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
+    }
+
+    void move( )
+    {
+        rb.MovePosition(transform.position + transform.forward * speed * Time.deltaTime);
+    }
+
+
 }
