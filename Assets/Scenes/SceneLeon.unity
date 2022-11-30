@@ -518,11 +518,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
+  dodgeballs: 1
+  TargetIndex: 0
+  ChargeTimer: 0
   Targets:
   - {fileID: 581938675}
-  TargetIndex: 0
-  dodgeballs: 1
+  ChargeDodgeball: 101
   dodgeball: {fileID: -1876114263252474154, guid: a7cf58bcdcdb2d1408c5f9c16e41937b, type: 3}
+  ChargedDodgeball: {fileID: 8002621940253702343, guid: d3e94cd164ccf6341880107d9d753ceb, type: 3}
 --- !u!4 &1295031387
 Transform:
   m_ObjectHideFlags: 0
