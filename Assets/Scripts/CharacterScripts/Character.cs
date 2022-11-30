@@ -88,7 +88,7 @@ public class Character : MonoBehaviour
         FacingDirection = diff.magnitude > 0 ? new Vector2(diff.x, diff.z) : standFacingDir;
     }
 
-    private void TakeDamage(int amount)
+    public void TakeDamage(int amount)
     {
         CurrentHealth -= amount;
     }
