@@ -7,9 +7,10 @@ public class Dodgeball : MonoBehaviour
 {
     private float _speed;
     private Vector3 _dir;
-    
+    public string enemyTag;
+
     [SerializeField]
-    private Rigidbody2D rigidBody;
+    private Rigidbody rigidBody;
     private bool _wasDropped;
 
     public bool WasDropped
@@ -21,7 +22,8 @@ public class Dodgeball : MonoBehaviour
                 return;
 
             _wasDropped = value;
-            rigidBody.gravityScale = Convert.ToSingle(!_wasDropped);
+            rigidBody.useGravity = _wasDropped;
+            _speed = 0f;
         }
     }
 
@@ -30,6 +32,7 @@ public class Dodgeball : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _wasDropped=false;
         ShootDodgeball = FindObjectOfType<shootDodgeball>();
     }
 
@@ -46,10 +49,11 @@ public class Dodgeball : MonoBehaviour
         this._speed = speed;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.tag == "enemy1")
+        if (collision.gameObject.tag == enemyTag)
         {
+            Debug.Log("oui");
             WasDropped = true;
         }
     }
