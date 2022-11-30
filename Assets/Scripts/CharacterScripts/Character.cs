@@ -26,6 +26,7 @@ public class Character : MonoBehaviour
 
             healthChange.Invoke(new HealthChangeData
             {
+                MaxHealth = maxHealth,
                 Previous = prev,
                 Current = _currentHealth,
             });
