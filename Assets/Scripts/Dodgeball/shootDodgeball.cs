@@ -6,7 +6,7 @@ public class shootDodgeball : MonoBehaviour
 {
     public float speed;
     public int dodgeballs = 1;
-    public int TargetIndex = 0;
+    [SerializeField] private int targetIndex = 0;
     public float ChargeTimer;
     private bool _isCharging = false;
 
@@ -15,6 +15,32 @@ public class shootDodgeball : MonoBehaviour
     
     public Dodgeball dodgeball;
     public Dodgeball ChargedDodgeball;
+
+    public GameObject[] bars;
+    
+    public int TargetIndex
+    {
+        get => targetIndex;
+        private set
+        {
+            if (value == targetIndex)
+                return;
+
+            targetIndex = value;
+
+            // doesn't go beyond length
+            targetIndex %= Targets.Length;
+            // doesn't go below zero
+            if(targetIndex < 0)
+                targetIndex = Targets.Length - 1;
+
+            for (int i = 0; i < bars.Length; i++)
+            {
+                bars[i].SetActive(false);
+            }
+            bars[targetIndex].SetActive(true);
+        }
+    }
 
     public bool IsCharging
     {
@@ -47,12 +73,10 @@ public class shootDodgeball : MonoBehaviour
 
     public void UpdateTarget()
     {
-
         if (Input.GetKeyDown(KeyCode.F))
         {
             TargetIndex += 1;
-            // doesn't go beyond length
-            TargetIndex %= Targets.Length;
+            
             Debug.Log(TargetIndex);
         }
     }
