@@ -111,6 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c27f8e59bd010849bf71edae8a99888, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageAmount: 10
   enemyTag: Enemy
   rigidBody: {fileID: 5823637515662835852}
 --- !u!135 &501175421524635556

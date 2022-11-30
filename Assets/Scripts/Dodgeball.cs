@@ -6,6 +6,7 @@ using UnityEngine;
 public class Dodgeball : MonoBehaviour
 {
     private float _speed;
+    public int damageAmount;
     private Vector3 _dir;
     public string enemyTag;
 
@@ -51,10 +52,14 @@ public class Dodgeball : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
+        var hitObj = collision.gameObject;
+        var CharData = hitObj.GetComponent<Character>();
         if (collision.gameObject.tag == enemyTag)
         {
-            Debug.Log("oui");
+            CharData.TakeDamage(damageAmount);
             WasDropped = true;
         }
     }
+
+
 }

@@ -230,6 +230,7 @@ GameObject:
   - component: {fileID: 581938677}
   - component: {fileID: 581938679}
   - component: {fileID: 581938678}
+  - component: {fileID: 581938680}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -331,6 +332,38 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.14, y: 5.26, z: 0.18}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &581938680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 581938675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 577bcbde1439d4f45a1c1b2320297dcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  standFacingDir: {x: 1, y: 0}
+  healthChange:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  facingDirChange:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &831204460
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -498,6 +531,7 @@ GameObject:
   - component: {fileID: 1295031388}
   - component: {fileID: 1295031390}
   - component: {fileID: 1295031389}
+  - component: {fileID: 1295031391}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -620,3 +654,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.68, y: 4.28, z: 0.2}
   m_Center: {x: 0.42, y: -0.68, z: 0}
+--- !u!114 &1295031391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1295031385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 577bcbde1439d4f45a1c1b2320297dcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  standFacingDir: {x: 1, y: 0}
+  healthChange:
+    m_PersistentCalls:
+      m_Calls: []
+  facingDirChange:
+    m_PersistentCalls:
+      m_Calls: []
