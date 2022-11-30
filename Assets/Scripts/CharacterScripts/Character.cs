@@ -72,6 +72,14 @@ public class Character : MonoBehaviour
         _currentHealth = maxHealth;
         _facingDir = standFacingDir;
         _currentPos = transform.position;
+        
+        // call the healthChange event to give listeners info at the start
+        healthChange.Invoke(new HealthChangeData
+        {
+            MaxHealth = maxHealth,
+            Current = _currentHealth,
+            Previous = _currentHealth,
+        });
     }
 
     // Start is called before the first frame update
