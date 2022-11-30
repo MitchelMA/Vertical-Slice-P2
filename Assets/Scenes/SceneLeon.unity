@@ -175,6 +175,9 @@ MonoBehaviour:
   facingDirChange:
     m_PersistentCalls:
       m_Calls: []
+  healthZero:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!54 &318525295
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -321,6 +324,9 @@ MonoBehaviour:
   facingDirChange:
     m_PersistentCalls:
       m_Calls: []
+  healthZero:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!54 &472433072
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -409,7 +415,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 472433070}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.87, y: 1.5, z: -1.32}
+  m_LocalPosition: {x: 3.87, y: 1.5, z: -3.18}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -656,6 +662,9 @@ MonoBehaviour:
   facingDirChange:
     m_PersistentCalls:
       m_Calls: []
+  healthZero:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &831204460
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -713,7 +722,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5951747518958874999, guid: eb01ac5c483559741abed1a01dd2c110, type: 3}
       propertyPath: camSettings.y
-      value: 160
+      value: 145
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb01ac5c483559741abed1a01dd2c110, type: 3}
@@ -824,6 +833,7 @@ GameObject:
   - component: {fileID: 1295031390}
   - component: {fileID: 1295031389}
   - component: {fileID: 1295031391}
+  - component: {fileID: 1295031392}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -843,7 +853,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0812502e7b183c7459f4df82b6210af8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 10
   dodgeballs: 2
   TargetIndex: 0
   ChargeTimer: 0
@@ -968,3 +978,20 @@ MonoBehaviour:
   facingDirChange:
     m_PersistentCalls:
       m_Calls: []
+  healthZero:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1295031392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1295031385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 485454763cc5c3642904b14215544345, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 1295031389}
+  speed: 5

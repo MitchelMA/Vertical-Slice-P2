@@ -74,7 +74,7 @@ public class shootDodgeball : MonoBehaviour
 
     private (float, Dodgeball) GetDodgeBall()
     {
-        if (ChargeTimer > 2f)
+        if (ChargeTimer > 1f)
             return (2, ChargedDodgeball);
 
         else return (1, dodgeball);
