@@ -8,6 +8,7 @@ public class shootDodgeball : MonoBehaviour
     public int dodgeballs = 1;
     public int TargetIndex = 0;
     public float ChargeTimer;
+    private bool _isCharging = false;
 
     public GameObject[] Targets;
     public KeyCode ChargeDodgeball;
@@ -15,36 +16,85 @@ public class shootDodgeball : MonoBehaviour
     public Dodgeball dodgeball;
     public Dodgeball ChargedDodgeball;
 
-    // Start is called before the first frame update
-    void Start()
+    public bool IsCharging
     {
+        get => _isCharging;
+        private set
+        {
+            if (value == _isCharging)
+                return;
 
+            var prev = _isCharging;
+            _isCharging = value;
+
+            // if prev is *true*, _isCharging is automatically *false*
+            if (prev == true)
+            {
+                Shoot();
+                // reset charge timer
+                ChargeTimer = 0;
+            }
+        }
     }
 
+    
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(ChargeDodgeball) && dodgeballs > 0)
-        {
-            ChargeTimer += Time.deltaTime;
-        }
-        if (Input.GetKeyUp(ChargeDodgeball) && dodgeballs > 0 && ChargeTimer > 2)
-        {
-            Debug.Log("shoot");
-            Vector3 dir = Targets[TargetIndex].transform.position - transform.position;
-            var clone = Instantiate(ChargedDodgeball);
-            clone.Setup(dir, transform.position, speed * 2);
-
-            dodgeballs -= 1;
-        }
-        if (Input.GetKeyUp(ChargeDodgeball) && dodgeballs > 0 && dodgeballs < 2)
-        {
-            Vector3 dir = Targets[TargetIndex].transform.position - transform.position;
-            var clone = Instantiate(dodgeball);
-            clone.Setup(dir, transform.position, speed);
-            dodgeballs -= 1;
-        }
+        ShootKeyHandle();
+        UpdateTarget();
     }
 
+    public void UpdateTarget()
+    {
+
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            TargetIndex += 1;
+            // doesn't go beyond length
+            TargetIndex %= Targets.Length;
+            Debug.Log(TargetIndex);
+        }
+    }
+    public void ShootKeyHandle()
+    {
+        if (Input.GetKeyDown(ChargeDodgeball))
+        {
+            IsCharging = true;
+        }
+
+        if (Input.GetKeyUp(ChargeDodgeball))
+        {
+            IsCharging = false;
+        }
+
+        if (IsCharging)
+            ChargeTimer += Time.deltaTime;
+    }
+
+    private (float, Dodgeball) GetDodgeBall()
+    {
+        if (ChargeTimer > 2f)
+            return (2, ChargedDodgeball);
+
+        else return (1, dodgeball);
+    }
+
+    private void Shoot()
+    {
+        if (dodgeballs <= 0)
+            return;
+
+        // calculate the dir
+        Vector3 dir = Targets[TargetIndex].transform.position - transform.position;
+
+        // setup the clone
+        var (speedMult, ball) = GetDodgeBall();
+        var clone = Instantiate(ball);
+        clone.Setup(dir, transform.position, speed * speedMult);
+
+        // subtract from the dodgeballs
+        dodgeballs -= 1;
+    }
 }
 
