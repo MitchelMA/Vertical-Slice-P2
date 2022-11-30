@@ -21,11 +21,20 @@ public class Character : MonoBehaviour
         {
             if (value == _currentHealth)
                 return;
+            
             var prev = _currentHealth;
-            _currentHealth = value;
+            // Health cannot go below 0
+            _currentHealth = Math.Max(value, 0);
+            // Health cannot go beyond maxHealth
+            _currentHealth = Math.Min(_currentHealth, maxHealth);
+            
+            // Health zero event
+            if(_currentHealth <= 0)
+                healthZero.Invoke();
 
             healthChange.Invoke(new HealthChangeData
             {
+                MaxHealth = maxHealth,
                 Previous = prev,
                 Current = _currentHealth,
             });
@@ -55,6 +64,7 @@ public class Character : MonoBehaviour
     // Events
     public UnityEvent<HealthChangeData> healthChange = new UnityEvent<HealthChangeData>();
     public UnityEvent<FacingDirChange> facingDirChange = new UnityEvent<FacingDirChange>();
+    public UnityEvent healthZero = new UnityEvent();
 
     // Awake is called before Start
     private void Awake()
