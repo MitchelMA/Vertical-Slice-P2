@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 622381161682120846}
   - component: {fileID: 8997012112476387315}
   - component: {fileID: 4087793333896250804}
+  - component: {fileID: 2439329635056491}
   m_Layer: 0
   m_Name: SpriteOffset
   m_TagString: Untagged
@@ -96,6 +97,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   facingCamera: {fileID: 0}
+--- !u!65 &2439329635056491
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365376917683726310}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.42, y: 4.36, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4073348914007536812
 GameObject:
   m_ObjectHideFlags: 0
@@ -107,6 +121,8 @@ GameObject:
   - component: {fileID: 4083453525666969287}
   - component: {fileID: 4014222733577417589}
   - component: {fileID: 5876866409406854210}
+  - component: {fileID: 1175027399164856370}
+  - component: {fileID: 7478683421335526650}
   m_Layer: 0
   m_Name: FacingCamChar
   m_TagString: Untagged
@@ -140,7 +156,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.42, y: 4.36, z: 0.1}
+  m_Size: {x: 4.42, y: 4.36, z: 0.35}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &5876866409406854210
 Rigidbody:
@@ -156,5 +172,42 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &1175027399164856370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4073348914007536812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 485454763cc5c3642904b14215544345, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  speed: 5
+--- !u!114 &7478683421335526650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4073348914007536812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 577bcbde1439d4f45a1c1b2320297dcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  standFacingDir: {x: 1, y: 0}
+  healthChange:
+    m_PersistentCalls:
+      m_Calls: []
+  facingDirChange:
+    m_PersistentCalls:
+      m_Calls: []
+  healthZero:
+    m_PersistentCalls:
+      m_Calls: []
