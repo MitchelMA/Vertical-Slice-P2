@@ -288,26 +288,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 622381161682120846, guid: 96f826364b70eae44bfb3e908d9c70ed, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 622381161682120846, guid: 96f826364b70eae44bfb3e908d9c70ed, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 622381161682120846, guid: 96f826364b70eae44bfb3e908d9c70ed, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 622381161682120846, guid: 96f826364b70eae44bfb3e908d9c70ed, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 622381161682120846, guid: 96f826364b70eae44bfb3e908d9c70ed, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4073348914007536812, guid: 96f826364b70eae44bfb3e908d9c70ed, type: 3}
       propertyPath: m_Name
       value: FacingCamChar
@@ -315,14 +295,6 @@ PrefabInstance:
     - target: {fileID: 4083453525666969287, guid: 96f826364b70eae44bfb3e908d9c70ed, type: 3}
       propertyPath: m_RootOrder
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4083453525666969287, guid: 96f826364b70eae44bfb3e908d9c70ed, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4083453525666969287, guid: 96f826364b70eae44bfb3e908d9c70ed, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4083453525666969287, guid: 96f826364b70eae44bfb3e908d9c70ed, type: 3}
       propertyPath: m_LocalPosition.x
