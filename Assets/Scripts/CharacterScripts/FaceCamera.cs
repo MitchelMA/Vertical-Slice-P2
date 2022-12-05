@@ -9,13 +9,8 @@ public class FaceCamera : MonoBehaviour
     private float _alphaAngle = 0;
     private float _betaAngle = 0;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         Vector2 offset = PosOffset();
         transform.localPosition = new Vector3(0, offset.y, offset.x);
@@ -37,8 +32,6 @@ public class FaceCamera : MonoBehaviour
         const float pi12 = 1.570796f; 
         // Since the Gamma-angle is 90°, we can deduce that the beta angle is 90 - the Alpha-angle
         _betaAngle = pi12 - _alphaAngle;
-        // print($"alpha: {alphaAngle * Mathf.Rad2Deg}; beta: {betaAngle * Mathf.Rad2Deg}");
-
         float sideB = transform.localScale.y;
 
         // Using the sinus-rule
