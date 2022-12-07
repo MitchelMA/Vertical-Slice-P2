@@ -241,13 +241,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaebb153c362f094e9c1714e4f6b6cc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player1Long: {fileID: 830649598}
-  player2Long: {fileID: 637819304}
-  player3Long: {fileID: 1670360743}
-  player1: {fileID: 764162870}
-  player2: {fileID: 1554097494}
-  player3: {fileID: 1721002857}
-  speed: 500
+  player1Long: {fileID: 830649597}
+  player2Long: {fileID: 637819302}
+  player3Long: {fileID: 1670360741}
+  player1: {fileID: 764162869}
+  player2: {fileID: 1554097493}
+  player3: {fileID: 1721002856}
+  speed: 0.3
 --- !u!114 &637819304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -322,7 +322,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 543, y: -612}
+  m_AnchoredPosition: {x: 650, y: -610}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &764162870
@@ -375,13 +375,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaebb153c362f094e9c1714e4f6b6cc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player1Long: {fileID: 830649598}
-  player2Long: {fileID: 637819304}
-  player3Long: {fileID: 1670360743}
-  player1: {fileID: 764162870}
-  player2: {fileID: 1554097494}
-  player3: {fileID: 1721002857}
-  speed: 500
+  player1Long: {fileID: 830649597}
+  player2Long: {fileID: 637819302}
+  player3Long: {fileID: 1670360741}
+  player1: {fileID: 764162869}
+  player2: {fileID: 1554097493}
+  player3: {fileID: 1721002856}
+  speed: 0.3
 --- !u!1 &830649596
 GameObject:
   m_ObjectHideFlags: 0
@@ -471,13 +471,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaebb153c362f094e9c1714e4f6b6cc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player1Long: {fileID: 830649598}
-  player2Long: {fileID: 637819304}
-  player3Long: {fileID: 1670360743}
-  player1: {fileID: 764162870}
-  player2: {fileID: 1554097494}
-  player3: {fileID: 1721002857}
-  speed: 500
+  player1Long: {fileID: 830649597}
+  player2Long: {fileID: 637819302}
+  player3Long: {fileID: 1670360741}
+  player1: {fileID: 764162869}
+  player2: {fileID: 1554097493}
+  player3: {fileID: 1721002856}
+  speed: 0.3
 --- !u!1 &1074015667
 GameObject:
   m_ObjectHideFlags: 0
@@ -656,10 +656,10 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 764162869}
-  - {fileID: 830649597}
   - {fileID: 1554097493}
-  - {fileID: 637819302}
   - {fileID: 1721002856}
+  - {fileID: 830649597}
+  - {fileID: 637819302}
   - {fileID: 1670360741}
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -799,7 +799,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 532, y: -451}
+  m_AnchoredPosition: {x: 530, y: -450}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1554097494
@@ -852,13 +852,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaebb153c362f094e9c1714e4f6b6cc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player1Long: {fileID: 830649598}
-  player2Long: {fileID: 637819304}
-  player3Long: {fileID: 1670360743}
-  player1: {fileID: 764162870}
-  player2: {fileID: 1554097494}
-  player3: {fileID: 1721002857}
-  speed: 500
+  player1Long: {fileID: 830649597}
+  player2Long: {fileID: 637819302}
+  player3Long: {fileID: 1670360741}
+  player1: {fileID: 764162869}
+  player2: {fileID: 1554097493}
+  player3: {fileID: 1721002856}
+  speed: 0.3
 --- !u!1 &1670360740
 GameObject:
   m_ObjectHideFlags: 0
@@ -910,13 +910,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaebb153c362f094e9c1714e4f6b6cc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player1Long: {fileID: 830649598}
-  player2Long: {fileID: 637819304}
-  player3Long: {fileID: 1670360743}
-  player1: {fileID: 764162870}
-  player2: {fileID: 1554097494}
-  player3: {fileID: 1721002857}
-  speed: 500
+  player1Long: {fileID: 830649597}
+  player2Long: {fileID: 637819302}
+  player3Long: {fileID: 1670360741}
+  player1: {fileID: 764162869}
+  player2: {fileID: 1554097493}
+  player3: {fileID: 1721002856}
+  speed: 0.3
 --- !u!114 &1670360743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -991,7 +991,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 762, y: -451}
+  m_AnchoredPosition: {x: 760, y: -450}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1721002857
@@ -1044,10 +1044,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaebb153c362f094e9c1714e4f6b6cc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player1Long: {fileID: 830649598}
-  player2Long: {fileID: 637819304}
-  player3Long: {fileID: 1670360743}
-  player1: {fileID: 764162870}
-  player2: {fileID: 1554097494}
-  player3: {fileID: 1721002857}
-  speed: 500
+  player1Long: {fileID: 830649597}
+  player2Long: {fileID: 637819302}
+  player3Long: {fileID: 1670360741}
+  player1: {fileID: 764162869}
+  player2: {fileID: 1554097493}
+  player3: {fileID: 1721002856}
+  speed: 0.3
