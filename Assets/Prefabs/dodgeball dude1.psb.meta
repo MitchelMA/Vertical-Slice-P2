@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9f3a3d3dbaa431c4194ed9508b3a42f3
+guid: 67f774411f23ca442835c27efb8405d2
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -91,6 +91,28 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
+  - name: klitteband ofzo
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 247
+      y: 1984
+      width: 116
+      height: 51
+    spriteID: 54d6d8c00052d5244b593a3403fe4367
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -710, y: 1289}
   - name: haarpet
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -98,11 +120,11 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 566
-      y: 457
+      x: 4
+      y: 980
       width: 235
-      height: 274
-    spriteID: 88e49735522edb84d9dd6f9b31bd81c4
+      height: 283
+    spriteID: 56de63c669f857a4d930f9ab014a82c6
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -112,52 +134,8 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -424, y: -278}
-  - name: linkerhand
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 621
-      y: 229
-      width: 241
-      height: 206
-    spriteID: 4e9028c4b5bd94d459fbc0dee2504f02
-    internalID: 0
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: -86, y: -74}
-  - name: rechterhand
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 621
-      y: 4
-      width: 277
-      height: 217
-    spriteID: 685b09202ba41f64fb978e973cdcbe61
-    internalID: 0
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: -431, y: -289}
-  - name: haar
+    uvTransform: {x: -986, y: 254}
+  - name: pet
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -165,10 +143,10 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 825
-      width: 532
-      height: 165
-    spriteID: 800d3ebe9845cc2418e4f621de0e3dd8
+      y: 4
+      width: 604
+      height: 295
+    spriteID: 35cd7aad8dc47e14f816201849a81234
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -178,7 +156,95 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -719, y: 282}
+    uvTransform: {x: -589, y: -599}
+  - name: linkerhand
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 247
+      y: 1205
+      width: 241
+      height: 206
+    spriteID: a8078578ac4f6434ea9e160bd22e15c4
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -460, y: 902}
+  - name: rechterhand
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 247
+      y: 980
+      width: 277
+      height: 217
+    spriteID: fce28b0cd6c503448838518b1c01156c
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -805, y: 687}
+  - name: haar 2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 448
+      y: 624
+      width: 109
+      height: 173
+    spriteID: f373d8751502e2445b2e097e5736544d
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -698, y: 81}
+  - name: haar
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 247
+      y: 1596
+      width: 248
+      height: 175
+    spriteID: 2dc4ac3ca02daa54988bd2af49bf32fe
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -476, y: 1040}
   - name: hoofd
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -187,10 +253,10 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 4
-      width: 609
-      height: 445
-    spriteID: 0cc9ffb383529664db61eafe8001d917
+      y: 624
+      width: 436
+      height: 348
+    spriteID: bdb9f7a09b2b21e4f847c07629b4daa4
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -200,7 +266,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -584, y: -449}
+    uvTransform: {x: -742, y: 171}
   - name: linkerarm
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -208,11 +274,11 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 809
-      y: 457
+      x: 247
+      y: 1779
       width: 210
       height: 197
-    spriteID: bb4c0116e77173f44a581f7620caed11
+    spriteID: 1190d4c20dfe434469da1929d335021c
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -222,7 +288,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 151, y: 132}
+    uvTransform: {x: -411, y: 1454}
   - name: achterhaar
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -230,11 +296,11 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 812
-      y: 825
+      x: 4
+      y: 1271
       width: 194
       height: 164
-    spriteID: a28a3f077e0717f4ab150bbea4b6706a
+    spriteID: 8e094cc7fd17209468f9373b3eb54899
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -244,7 +310,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 122, y: 327}
+    uvTransform: {x: -686, y: 773}
   - name: torso
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -252,11 +318,11 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 544
-      y: 825
+      x: 247
+      y: 1419
       width: 260
       height: 169
-    spriteID: 2cbb4b8c9b89a6643b292028c1a05e52
+    spriteID: 3ec60351a5b2c1143961aad696426588
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -266,7 +332,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -223, y: 461}
+    uvTransform: {x: -520, y: 1055}
   - name: rechterarm
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -274,11 +340,11 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 809
-      y: 662
+      x: 4
+      y: 1443
       width: 171
       height: 134
-    spriteID: 86f88e4a343ee2b4eb71317337eb4484
+    spriteID: 557ab9145ed12e8498bb83e52a021101
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -288,7 +354,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -191, y: 303}
+    uvTransform: {x: -996, y: 1084}
   - name: benen
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -297,10 +363,10 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 457
+      y: 307
       width: 554
-      height: 360
-    spriteID: 7b357f34086249e4e92d93a2c9c60ebf
+      height: 309
+    spriteID: c81bd17b73f96444288b7bf1a9ade8cc
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -310,103 +376,204 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -652, y: 352}
-  platformSettings: []
+    uvTransform: {x: -652, y: 202}
+  - name: Laag 37
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 616
+      y: 4
+      width: 337
+      height: 250
+    spriteID: dffb82442e9187d488a8525fc25da0c9
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -125, y: -211}
+  - name: Laag 36
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1585
+      width: 187
+      height: 99
+    spriteID: d8c8a4d93f43a8349b8b5072c0f79c9c
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -584, y: 984}
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
   mosaicLayers: 1
   documentPivot: {x: 0, y: 0}
-  documentAlignment: 7
+  documentAlignment: 0
   importHiddenLayers: 0
   importedTextureWidth: 1024
-  importedTextureHeight: 1024
+  importedTextureHeight: 2048
   documentSize: {x: 1920, y: 1080}
   paperDollMode: 0
   keepDupilcateSpriteName: 0
   spriteCategoryList:
     categories: []
   textureActualWidth: 1024
-  textureActualHeight: 1024
+  textureActualHeight: 2048
   spritePackingTag: 
   resliceFromLayer: 0
   characterMode: 1
   mosaicPSDLayers: []
   rigPSDLayers:
+  - name: klitteband ofzo
+    spriteName: klitteband ofzo
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 54d6d8c00052d5244b593a3403fe4367
+    layerID: 69
+    mosaicPosition: {x: 247, y: 1984}
   - name: haarpet
     spriteName: haarpet
     isGroup: 0
     parentIndex: -1
-    spriteID: 88e49735522edb84d9dd6f9b31bd81c4
+    spriteID: 56de63c669f857a4d930f9ab014a82c6
     layerID: 64
-    mosaicPosition: {x: 566, y: 457}
+    mosaicPosition: {x: 4, y: 980}
+  - name: pet
+    spriteName: pet
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 35cd7aad8dc47e14f816201849a81234
+    layerID: 68
+    mosaicPosition: {x: 4, y: 4}
   - name: linkerhand
     spriteName: linkerhand
     isGroup: 0
     parentIndex: -1
-    spriteID: 4e9028c4b5bd94d459fbc0dee2504f02
+    spriteID: a8078578ac4f6434ea9e160bd22e15c4
     layerID: 37
-    mosaicPosition: {x: 621, y: 229}
+    mosaicPosition: {x: 247, y: 1205}
   - name: rechterhand
     spriteName: rechterhand
     isGroup: 0
     parentIndex: -1
-    spriteID: 685b09202ba41f64fb978e973cdcbe61
+    spriteID: fce28b0cd6c503448838518b1c01156c
     layerID: 39
-    mosaicPosition: {x: 621, y: 4}
+    mosaicPosition: {x: 247, y: 980}
+  - name: haar 2
+    spriteName: haar 2
+    isGroup: 0
+    parentIndex: -1
+    spriteID: f373d8751502e2445b2e097e5736544d
+    layerID: 76
+    mosaicPosition: {x: 448, y: 624}
   - name: haar
     spriteName: haar
     isGroup: 0
     parentIndex: -1
-    spriteID: 800d3ebe9845cc2418e4f621de0e3dd8
+    spriteID: 2dc4ac3ca02daa54988bd2af49bf32fe
     layerID: 34
-    mosaicPosition: {x: 4, y: 825}
+    mosaicPosition: {x: 247, y: 1596}
   - name: hoofd
     spriteName: hoofd
     isGroup: 0
     parentIndex: -1
-    spriteID: 0cc9ffb383529664db61eafe8001d917
+    spriteID: bdb9f7a09b2b21e4f847c07629b4daa4
     layerID: 32
-    mosaicPosition: {x: 4, y: 4}
+    mosaicPosition: {x: 4, y: 624}
   - name: linkerarm
     spriteName: linkerarm
     isGroup: 0
     parentIndex: -1
-    spriteID: bb4c0116e77173f44a581f7620caed11
+    spriteID: 1190d4c20dfe434469da1929d335021c
     layerID: 43
-    mosaicPosition: {x: 809, y: 457}
+    mosaicPosition: {x: 247, y: 1779}
   - name: achterhaar
     spriteName: achterhaar
     isGroup: 0
     parentIndex: -1
-    spriteID: a28a3f077e0717f4ab150bbea4b6706a
+    spriteID: 8e094cc7fd17209468f9373b3eb54899
     layerID: 54
-    mosaicPosition: {x: 812, y: 825}
+    mosaicPosition: {x: 4, y: 1271}
   - name: torso
     spriteName: torso
     isGroup: 0
     parentIndex: -1
-    spriteID: 2cbb4b8c9b89a6643b292028c1a05e52
+    spriteID: 3ec60351a5b2c1143961aad696426588
     layerID: 48
-    mosaicPosition: {x: 544, y: 825}
+    mosaicPosition: {x: 247, y: 1419}
   - name: rechterarm
     spriteName: rechterarm
     isGroup: 0
     parentIndex: -1
-    spriteID: 86f88e4a343ee2b4eb71317337eb4484
+    spriteID: 557ab9145ed12e8498bb83e52a021101
     layerID: 29
-    mosaicPosition: {x: 809, y: 662}
+    mosaicPosition: {x: 4, y: 1443}
   - name: benen
     spriteName: benen
     isGroup: 0
     parentIndex: -1
-    spriteID: 7b357f34086249e4e92d93a2c9c60ebf
+    spriteID: c81bd17b73f96444288b7bf1a9ade8cc
     layerID: 59
-    mosaicPosition: {x: 4, y: 457}
+    mosaicPosition: {x: 4, y: 307}
+  - name: Laag 37
+    spriteName: Laag 37
+    isGroup: 0
+    parentIndex: -1
+    spriteID: dffb82442e9187d488a8525fc25da0c9
+    layerID: 73
+    mosaicPosition: {x: 616, y: 4}
+  - name: Laag 36
+    spriteName: Laag 36
+    isGroup: 0
+    parentIndex: -1
+    spriteID: d8c8a4d93f43a8349b8b5072c0f79c9c
+    layerID: 72
+    mosaicPosition: {x: 4, y: 1585}
   characterData:
     bones: []
     parts: []
     dimension: {x: 0, y: 0}
     characterGroups: []
   generateGOHierarchy: 0
-  textureAssetName: dodgeball dude Texture
-  prefabAssetName: dodgeball dude Prefab
-  spriteLibAssetName: dodgeball dude Sprite Lib
+  textureAssetName: dodgeball dude1 Texture
+  prefabAssetName: dodgeball dude1 Prefab
+  spriteLibAssetName: dodgeball dude1 Sprite Lib
   secondarySpriteTextures: []
