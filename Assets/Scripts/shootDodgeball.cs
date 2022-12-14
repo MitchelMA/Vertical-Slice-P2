@@ -1,15 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 [RequireComponent(typeof(BoxCollider))]
 public class shootDodgeball : MonoBehaviour
 {
     public float speed;
-    public int dodgeballs = 1;
+    public int dodgeballs;
     public int TargetIndex = 0;
     public float ChargeTimer;
     private bool _isCharging = false;
+
+    public TextMeshProUGUI Counter;
 
     public GameObject[] Targets;
     public KeyCode ChargeDodgeball;
@@ -105,6 +108,7 @@ public class shootDodgeball : MonoBehaviour
 
         // subtract from the dodgeballs
         dodgeballs -= 1;
+        Counter.text = dodgeballs.ToString();
     }
 }
 
