@@ -1,0 +1,412 @@
+fileFormatVersion: 2
+guid: 9f3a3d3dbaa431c4194ed9508b3a42f3
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 1
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    isReadable: 0
+    streamingMipmaps: 1
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  spriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  mosaicSpriteImportData: []
+  rigSpriteImportData:
+  - name: haarpet
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 566
+      y: 457
+      width: 235
+      height: 274
+    spriteID: 88e49735522edb84d9dd6f9b31bd81c4
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -424, y: -278}
+  - name: linkerhand
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 621
+      y: 229
+      width: 241
+      height: 206
+    spriteID: 4e9028c4b5bd94d459fbc0dee2504f02
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -86, y: -74}
+  - name: rechterhand
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 621
+      y: 4
+      width: 277
+      height: 217
+    spriteID: 685b09202ba41f64fb978e973cdcbe61
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -431, y: -289}
+  - name: haar
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 825
+      width: 532
+      height: 165
+    spriteID: 800d3ebe9845cc2418e4f621de0e3dd8
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -719, y: 282}
+  - name: hoofd
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 609
+      height: 445
+    spriteID: 0cc9ffb383529664db61eafe8001d917
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -584, y: -449}
+  - name: linkerarm
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 809
+      y: 457
+      width: 210
+      height: 197
+    spriteID: bb4c0116e77173f44a581f7620caed11
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 151, y: 132}
+  - name: achterhaar
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 812
+      y: 825
+      width: 194
+      height: 164
+    spriteID: a28a3f077e0717f4ab150bbea4b6706a
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 122, y: 327}
+  - name: torso
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 544
+      y: 825
+      width: 260
+      height: 169
+    spriteID: 2cbb4b8c9b89a6643b292028c1a05e52
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -223, y: 461}
+  - name: rechterarm
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 809
+      y: 662
+      width: 171
+      height: 134
+    spriteID: 86f88e4a343ee2b4eb71317337eb4484
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -191, y: 303}
+  - name: benen
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 457
+      width: 554
+      height: 360
+    spriteID: 7b357f34086249e4e92d93a2c9c60ebf
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -652, y: 352}
+  platformSettings: []
+  mosaicLayers: 1
+  documentPivot: {x: 0, y: 0}
+  documentAlignment: 7
+  importHiddenLayers: 0
+  importedTextureWidth: 1024
+  importedTextureHeight: 1024
+  documentSize: {x: 1920, y: 1080}
+  paperDollMode: 0
+  keepDupilcateSpriteName: 0
+  spriteCategoryList:
+    categories: []
+  textureActualWidth: 1024
+  textureActualHeight: 1024
+  spritePackingTag: 
+  resliceFromLayer: 0
+  characterMode: 1
+  mosaicPSDLayers: []
+  rigPSDLayers:
+  - name: haarpet
+    spriteName: haarpet
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 88e49735522edb84d9dd6f9b31bd81c4
+    layerID: 64
+    mosaicPosition: {x: 566, y: 457}
+  - name: linkerhand
+    spriteName: linkerhand
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 4e9028c4b5bd94d459fbc0dee2504f02
+    layerID: 37
+    mosaicPosition: {x: 621, y: 229}
+  - name: rechterhand
+    spriteName: rechterhand
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 685b09202ba41f64fb978e973cdcbe61
+    layerID: 39
+    mosaicPosition: {x: 621, y: 4}
+  - name: haar
+    spriteName: haar
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 800d3ebe9845cc2418e4f621de0e3dd8
+    layerID: 34
+    mosaicPosition: {x: 4, y: 825}
+  - name: hoofd
+    spriteName: hoofd
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 0cc9ffb383529664db61eafe8001d917
+    layerID: 32
+    mosaicPosition: {x: 4, y: 4}
+  - name: linkerarm
+    spriteName: linkerarm
+    isGroup: 0
+    parentIndex: -1
+    spriteID: bb4c0116e77173f44a581f7620caed11
+    layerID: 43
+    mosaicPosition: {x: 809, y: 457}
+  - name: achterhaar
+    spriteName: achterhaar
+    isGroup: 0
+    parentIndex: -1
+    spriteID: a28a3f077e0717f4ab150bbea4b6706a
+    layerID: 54
+    mosaicPosition: {x: 812, y: 825}
+  - name: torso
+    spriteName: torso
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 2cbb4b8c9b89a6643b292028c1a05e52
+    layerID: 48
+    mosaicPosition: {x: 544, y: 825}
+  - name: rechterarm
+    spriteName: rechterarm
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 86f88e4a343ee2b4eb71317337eb4484
+    layerID: 29
+    mosaicPosition: {x: 809, y: 662}
+  - name: benen
+    spriteName: benen
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 7b357f34086249e4e92d93a2c9c60ebf
+    layerID: 59
+    mosaicPosition: {x: 4, y: 457}
+  characterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+  generateGOHierarchy: 0
+  textureAssetName: dodgeball dude Texture
+  prefabAssetName: dodgeball dude Prefab
+  spriteLibAssetName: dodgeball dude Sprite Lib
+  secondarySpriteTextures: []
