@@ -109,6 +109,7 @@ public class shootDodgeball : MonoBehaviour
         // subtract from the dodgeballs
         dodgeballs -= 1;
         Counter.text = dodgeballs.ToString();
+        Debug.Log(dodgeballs);
     }
 }
 

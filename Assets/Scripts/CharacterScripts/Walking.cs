@@ -10,10 +10,12 @@ public class Walking : MonoBehaviour
 
     private void Update()
     {
-        HandleInput();
-        var moveVec = speed * Time.deltaTime * _input;
+    }
 
-        transform.Translate(new Vector3(moveVec.x, 0, moveVec.y));
+    private void FixedUpdate()
+    {
+        HandleInput();
+        transform.Translate(new Vector3(_input.x, 0, _input.y));
     }
 
 
@@ -23,6 +25,7 @@ public class Walking : MonoBehaviour
         inp.x = Input.GetAxisRaw("Horizontal");
         inp.y = Input.GetAxisRaw("Vertical");
         _input = inp.normalized;
+        _input *= speed * Time.deltaTime;
     }
 }
 
