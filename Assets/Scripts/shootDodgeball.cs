@@ -1,17 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
+[RequireComponent(typeof(BoxCollider))]
 public class shootDodgeball : MonoBehaviour
 {
     public float speed;
-    public int dodgeballs = 1;
+    public int dodgeballs;
     public int TargetIndex = 0;
     public float ChargeTimer;
     private bool _isCharging = false;
 
+    public TextMeshProUGUI Counter;
+
     public GameObject[] Targets;
     public KeyCode ChargeDodgeball;
+    // public GameObject SpawnPoint;
+
+    private BoxCollider _collider;
     
     public Dodgeball dodgeball;
     public Dodgeball ChargedDodgeball;
@@ -37,7 +44,12 @@ public class shootDodgeball : MonoBehaviour
         }
     }
 
-    
+    private void Start()
+    {
+        _collider = GetComponent<BoxCollider>();
+    }
+
+
     // Update is called once per frame
     void Update()
     {
@@ -87,14 +99,16 @@ public class shootDodgeball : MonoBehaviour
 
         // calculate the dir
         Vector3 dir = Targets[TargetIndex].transform.position - transform.position;
+        print(dir);
 
         // setup the clone
         var (speedMult, ball) = GetDodgeBall();
         var clone = Instantiate(ball);
-        clone.Setup(dir, transform.position, speed * speedMult);
+        clone.Setup(dir, transform.position + transform.right, speed * speedMult); 
 
         // subtract from the dodgeballs
         dodgeballs -= 1;
+        Counter.text = dodgeballs.ToString();
     }
 }
 

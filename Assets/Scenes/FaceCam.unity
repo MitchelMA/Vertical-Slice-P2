@@ -297,6 +297,18 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4083453525666969287, guid: 96f826364b70eae44bfb3e908d9c70ed, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4083453525666969287, guid: 96f826364b70eae44bfb3e908d9c70ed, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4083453525666969287, guid: 96f826364b70eae44bfb3e908d9c70ed, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4083453525666969287, guid: 96f826364b70eae44bfb3e908d9c70ed, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -337,10 +349,15 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4087793333896250804, guid: 96f826364b70eae44bfb3e908d9c70ed, type: 3}
+      propertyPath: height
+      value: 4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4087793333896250804, guid: 96f826364b70eae44bfb3e908d9c70ed, type: 3}
       propertyPath: facingCamera
       value: 
       objectReference: {fileID: 252976990}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2439329635056491, guid: 96f826364b70eae44bfb3e908d9c70ed, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 96f826364b70eae44bfb3e908d9c70ed, type: 3}
 --- !u!1 &2140891597
 GameObject:

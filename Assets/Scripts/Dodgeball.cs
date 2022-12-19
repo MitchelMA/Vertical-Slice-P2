@@ -28,26 +28,36 @@ public class Dodgeball : MonoBehaviour
         }
     }
 
-    shootDodgeball ShootDodgeball;
+    private shootDodgeball ShootDodgeball;
 
     // Start is called before the first frame update
-    void Start()
+    private IEnumerator Start()
     {
         _wasDropped=false;
         ShootDodgeball = FindObjectOfType<shootDodgeball>();
+
+
+        if (TryGetComponent<SphereCollider>(out var collider))
+        {
+            collider.enabled = false;
+            float dur = (Vector3.right * 1f).magnitude / _speed;
+            yield return new WaitForSeconds(dur);
+            collider.enabled = true;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position += _speed * Time.deltaTime * _dir;
+        transform.Translate(_speed * Time.deltaTime * _dir);
     }
 
     public void Setup(Vector3 dir, Vector3 startPos, float speed = 1f)
     {
         transform.position = startPos;
         _dir = dir.normalized;
-        this._speed = speed;
+        print(_dir);
+        _speed = speed;
     }
 
     private void OnTriggerEnter(Collider collision)

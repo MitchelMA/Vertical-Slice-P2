@@ -16,7 +16,7 @@ public class PickUp : MonoBehaviour
     }
 
     
-    private void OnTriggerEnter(Collider collision)
+    private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == playerTag && dodgeBall.WasDropped == true)
         {
