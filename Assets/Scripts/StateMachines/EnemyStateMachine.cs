@@ -17,14 +17,13 @@ public class EnemyStateMachine : MonoBehaviour
         _baseMachine = new BaseMachine<EnemyStates>(EnemyStates.Idle, this);
         _baseMachine.StateChanged += StateChangedListener;
         _baseMachine.StateChanged += stateChanged.Invoke;
-        
+
         _target = transform.position;
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -37,14 +36,11 @@ public class EnemyStateMachine : MonoBehaviour
         _baseMachine.GetNext();
     }
 
-    [StateMethod((int)EnemyStates.Idle)]
+    [StateMethod((int) EnemyStates.Idle)]
     private EnemyStates HandleIdle()
     {
-        print("HandleIdle() was called");
-        int v = (int)(Random.value * 100f);
-        if (v > 90)
-            return EnemyStates.Moving;
-        return EnemyStates.Idle;
+        int v = (int) (Random.value * 100f);
+        return v > 98 ? EnemyStates.Moving : EnemyStates.Idle;
     }
 
     [StateMethod((int) EnemyStates.Moving)]
@@ -53,20 +49,23 @@ public class EnemyStateMachine : MonoBehaviour
         Vector3 currentPos = transform.position;
         if (Vector3.Distance(currentPos, _target) < 0.2f)
         {
-            // transform.Translate(currentPos, speed * Time.deltaTime);
+            return EnemyStates.Idle;
         }
 
+        Vector3 newPos = Vector3.MoveTowards(currentPos, _target, speed * Time.deltaTime);
+        transform.position = newPos;
         return EnemyStates.Moving;
     }
 
     private void StateChangedListener(EnemyStates old, EnemyStates current)
     {
-       Debug.Log($"State-Changed: {old} -> {current}");
+        Debug.Log($"State-Changed: {old} -> {current}");
 
-       if (current == EnemyStates.Moving)
-       {
-           Vector3 curPos = transform.position;
-           _target = new Vector3(curPos.x + (Random.value - 0.5f) * 2, curPos.y, curPos.z + (Random.value - 0.5f) * 2);
-       }
+        if (current == EnemyStates.Moving)
+        {
+            Vector3 curPos = transform.position;
+            _target = new Vector3(curPos.x + (Random.value - 0.5f) * 5, curPos.y,
+                curPos.z + (Random.value - 0.5f) * 5);
+        }
     }
 }

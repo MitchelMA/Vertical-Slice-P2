@@ -3,10 +3,10 @@
 [AttributeUsage(AttributeTargets.Method, AllowMultiple = false)]
 public class StateMethodAttribute : Attribute
 {
-   public int State { get; }
+   public int FromState { get; }
 
-   public StateMethodAttribute(int state)
+   public StateMethodAttribute(int fromState)
    {
-      State = state;
+      FromState = fromState;
    }
 }

@@ -106,7 +106,7 @@ public sealed class BaseMachine<T> where T : Enum
                 var attr = attrs[j];
 
                 // safely cast attr.State from Enum -> T
-                var tAttr = (T) Enum.ToObject(typeof(T), attr.State);
+                var tAttr = (T) Enum.ToObject(typeof(T), attr.FromState);
 
                 // cast the methodInfo to a delegate
                 Delegate med = Delegate.CreateDelegate(typeof(Func<T>), o, methodInfo.Name);
