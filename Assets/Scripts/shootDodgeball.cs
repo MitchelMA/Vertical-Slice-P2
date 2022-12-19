@@ -12,8 +12,8 @@ public class shootDodgeball : MonoBehaviour
     public float ChargeTimer;
     private bool _isCharging = false;
 
-    public TextMeshProUGUI Counter;
-
+    public TextMeshProUGUI CounterText;
+    public GameObject Counter;
     public GameObject[] Targets;
     public KeyCode ChargeDodgeball;
     // public GameObject SpawnPoint;
@@ -55,6 +55,17 @@ public class shootDodgeball : MonoBehaviour
     {
         ShootKeyHandle();
         UpdateTarget();
+    }
+
+    private void FixedUpdate()
+    {
+        if (dodgeballs < 1)
+        {
+            Counter.SetActive(false);
+        }
+        else Counter.SetActive(true);
+
+        CounterText.SetText(dodgeballs.ToString());
     }
 
     public void UpdateTarget()
@@ -108,8 +119,7 @@ public class shootDodgeball : MonoBehaviour
 
         // subtract from the dodgeballs
         dodgeballs -= 1;
-        Counter.text = dodgeballs.ToString();
-        Debug.Log(dodgeballs);
+        
     }
 }
 
