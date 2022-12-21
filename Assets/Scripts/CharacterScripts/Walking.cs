@@ -5,17 +5,15 @@ using UnityEngine;
 public class Walking : MonoBehaviour
 {
     [SerializeField] private Rigidbody rb;
-    public float _Speed = 5;
+    public float _speed = 5;
     private Vector2 _input = Vector2.zero;
 
     private void Update()
     {
         HandleInput();
-        var moveVec = _Speed * Time.deltaTime * _input;
-
+    }
     private void FixedUpdate()
     {
-        HandleInput();
         transform.Translate(new Vector3(_input.x, 0, _input.y));
     }
 
@@ -26,7 +24,7 @@ public class Walking : MonoBehaviour
         inp.x = Input.GetAxisRaw("Horizontal");
         inp.y = Input.GetAxisRaw("Vertical");
         _input = inp.normalized;
-        _input *= speed * Time.deltaTime;
+        _input *= _speed * Time.deltaTime;
     }
 }
 

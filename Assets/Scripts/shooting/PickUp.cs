@@ -20,7 +20,6 @@ public class PickUp : MonoBehaviour
     {
         if (collision.gameObject.tag == playerTag && dodgeBall.WasDropped == true)
         {
-            Debug.Log("hit");
             ShootDodgeball.dodgeballs += 1;
             Destroy(gameObject);
         }

@@ -56,7 +56,6 @@ public class Dodgeball : MonoBehaviour
     {
         transform.position = startPos;
         _dir = dir.normalized;
-        print(_dir);
         _speed = speed;
     }
 

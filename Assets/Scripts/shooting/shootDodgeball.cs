@@ -47,7 +47,7 @@ public class shootDodgeball : MonoBehaviour
                 Shoot();
                 // reset charge timer
                 ChargeTimer = 0;
-                walking._Speed = 5f;
+                walking._speed = 5f;
             }
         }
     }
@@ -89,7 +89,7 @@ public class shootDodgeball : MonoBehaviour
         if (Input.GetKeyDown(ChargeDodgeball))
         {
             IsCharging = true;
-            walking._Speed = 0f;
+            walking._speed = 0f;
         }
 
         if (Input.GetKeyUp(ChargeDodgeball))
@@ -101,7 +101,7 @@ public class shootDodgeball : MonoBehaviour
             ChargeTimer += Time.deltaTime;
     }
 
-    private (float, Dodgeball) GetDodgeBall()
+    private (float speedMult, Dodgeball ballPrefab) GetDodgeBall()
     {
         if (ChargeTimer > 1f)
             return (2, ChargedDodgeball);
@@ -116,7 +116,6 @@ public class shootDodgeball : MonoBehaviour
 
         // calculate the dir
         Vector3 dir = Targets[TargetIndex].transform.position - transform.position;
-        print(dir);
 
         // setup the clone
         var (speedMult, ball) = GetDodgeBall();
