@@ -6,6 +6,7 @@ using TMPro;
 [RequireComponent(typeof(BoxCollider))]
 public class shootDodgeball : MonoBehaviour
 {
+    public Walking walking;
     public float speed;
     public int dodgeballs;
     public int TargetIndex = 0;
@@ -22,6 +23,12 @@ public class shootDodgeball : MonoBehaviour
     
     public Dodgeball dodgeball;
     public Dodgeball ChargedDodgeball;
+    private void Start()
+    {
+        _collider = GetComponent<BoxCollider>();
+        walking = GetComponent<Walking>();   
+    }
+
 
     public bool IsCharging
     {
@@ -40,14 +47,12 @@ public class shootDodgeball : MonoBehaviour
                 Shoot();
                 // reset charge timer
                 ChargeTimer = 0;
+                walking._Speed = 5f;
             }
         }
     }
 
-    private void Start()
-    {
-        _collider = GetComponent<BoxCollider>();
-    }
+    
 
 
     // Update is called once per frame
@@ -84,6 +89,7 @@ public class shootDodgeball : MonoBehaviour
         if (Input.GetKeyDown(ChargeDodgeball))
         {
             IsCharging = true;
+            walking._Speed = 0f;
         }
 
         if (Input.GetKeyUp(ChargeDodgeball))
