@@ -13,8 +13,8 @@ public class shootDodgeball : MonoBehaviour
     public float ChargeTimer;
     private bool _isCharging = false;
 
-    public TextMeshProUGUI CounterText;
-    public GameObject Counter;
+    public TextMeshProUGUI Counter;
+
     public GameObject[] Targets;
     public KeyCode ChargeDodgeball;
     // public GameObject SpawnPoint;
@@ -62,17 +62,6 @@ public class shootDodgeball : MonoBehaviour
         UpdateTarget();
     }
 
-    private void FixedUpdate()
-    {
-        if (dodgeballs < 1)
-        {
-            Counter.SetActive(false);
-        }
-        else Counter.SetActive(true);
-
-        CounterText.SetText(dodgeballs.ToString());
-    }
-
     public void UpdateTarget()
     {
 
@@ -101,7 +90,7 @@ public class shootDodgeball : MonoBehaviour
             ChargeTimer += Time.deltaTime;
     }
 
-    private (float speedMult, Dodgeball ballPrefab) GetDodgeBall()
+    private (float, Dodgeball) GetDodgeBall()
     {
         if (ChargeTimer > 1f)
             return (2, ChargedDodgeball);
@@ -116,6 +105,7 @@ public class shootDodgeball : MonoBehaviour
 
         // calculate the dir
         Vector3 dir = Targets[TargetIndex].transform.position - transform.position;
+        print(dir);
 
         // setup the clone
         var (speedMult, ball) = GetDodgeBall();
@@ -124,7 +114,7 @@ public class shootDodgeball : MonoBehaviour
 
         // subtract from the dodgeballs
         dodgeballs -= 1;
-        
+        Counter.text = dodgeballs.ToString();
     }
 }
 
