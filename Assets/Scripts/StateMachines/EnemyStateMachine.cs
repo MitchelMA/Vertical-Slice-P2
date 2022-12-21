@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Serialization;
 
 public class EnemyStateMachine : MonoBehaviour
 {
@@ -17,6 +14,7 @@ public class EnemyStateMachine : MonoBehaviour
         _baseMachine = new BaseMachine<EnemyStates>(EnemyStates.Idle, this);
         _baseMachine.StateChanged += StateChangedListener;
         _baseMachine.StateChanged += stateChanged.Invoke;
+        _baseMachine.FromEveryState = EveryStateHandler;
 
         _target = transform.position;
     }
@@ -34,6 +32,13 @@ public class EnemyStateMachine : MonoBehaviour
     private void FixedUpdate()
     {
         _baseMachine.GetNext();
+    }
+
+    private EnemyStates EveryStateHandler(EnemyStates currentState)
+    {
+        // check for thrown balls to evade
+
+        return currentState;
     }
 
     [StateMethod((int) EnemyStates.Idle)]

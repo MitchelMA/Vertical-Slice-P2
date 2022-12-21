@@ -1,23 +1,52 @@
 using System;
 using System.Collections.Generic;
-using System.Linq.Expressions;
 using System.Reflection;
-using UnityEngine;
 
 public sealed class BaseMachine<T> where T : Enum
 {
-    public T CurrentState { get; private set; }
+    private T _currentState;
+    
+    private Func<T, T> _fromEveryState ;
+    
+    private readonly Dictionary<T, Func<T>> _register = new Dictionary<T, Func<T>>();
+    
+    public T CurrentState
+    {
+        get => _currentState;
+        private set
+        {
+            if (_currentState.Equals(value))
+                return;
+                
+            T oldVal = _currentState;
+            _currentState = value;
+
+            if (!oldVal.Equals(_currentState))
+               StateChanged?.Invoke(oldVal, _currentState); 
+        }
+    }
+    
     public T StartState { get; }
 
-    private readonly Dictionary<T, Func<T>> _register = new Dictionary<T, Func<T>>();
+    public Func<T, T> FromEveryState
+    {
+        get => _fromEveryState;
+
+        set
+        {
+            if (_fromEveryState != null)
+                return;
+
+            _fromEveryState = value;
+        }
+    }
 
     public delegate void StateChangedDelegate(T previousState, T currentState);
-
     public event StateChangedDelegate StateChanged;
 
     public BaseMachine(T startState)
     {
-        CurrentState = startState;
+        _currentState = startState;
         StartState = startState;
     }
 
@@ -67,24 +96,20 @@ public sealed class BaseMachine<T> where T : Enum
 
     public void GetNext()
     {
-        T oldState = CurrentState;
-
-        try
+        // call the from every state
+        if (FromEveryState != null)
         {
-            CurrentState = _register[CurrentState].Invoke();
-            if (!oldState.Equals(CurrentState))
-                StateChanged?.Invoke(oldState, CurrentState);
+           var nextState = FromEveryState.Invoke(CurrentState);
+           CurrentState = nextState;
         }
-        catch
-        {
-            // ignore
-        }
+        // after the everyState check invoke the specified state-handler
+        CurrentState = _register[CurrentState].Invoke();
     }
 
     public void RegisterClass(object o)
     {
         Type type = o.GetType();
-        
+
         var methodinfos =
             type.GetMethods(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
 
