@@ -11,6 +11,8 @@ public class shootDodgeball : MonoBehaviour
     public int TargetIndex = 0;
     public float ChargeTimer;
     private bool _isCharging = false;
+    public targetUI targetUI;
+    public changeUI changeUI;
 
     public TextMeshProUGUI Counter;
 
@@ -62,10 +64,17 @@ public class shootDodgeball : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.F))
         {
-            TargetIndex += 1;
             // doesn't go beyond length
+            if(TargetIndex == 0 || TargetIndex == 2){
+                targetUI.track(0);
+                changeUI.changePlayer1();
+            }
+            else if(TargetIndex != 0){
+                targetUI.track(1);
+                changeUI.changePlayer2();
+            }
+            TargetIndex++;
             TargetIndex %= Targets.Length;
-            Debug.Log(TargetIndex);
         }
     }
     public void ShootKeyHandle()
