@@ -198,10 +198,6 @@ PrefabInstance:
       propertyPath: facingCamera
       value: 
       objectReference: {fileID: 1096427968}
-    - target: {fileID: 5876866409406854210, guid: 96f826364b70eae44bfb3e908d9c70ed, type: 3}
-      propertyPath: m_Constraints
-      value: 126
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96f826364b70eae44bfb3e908d9c70ed, type: 3}
 --- !u!1 &405981611
