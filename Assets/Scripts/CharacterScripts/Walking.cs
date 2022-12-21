@@ -8,12 +8,10 @@ public class Walking : MonoBehaviour
     public float _speed = 5;
     private Vector2 _input = Vector2.zero;
 
-    private void Update()
-    {
-        HandleInput();
-    }
+   
     private void FixedUpdate()
     {
+        HandleInput();
         transform.Translate(new Vector3(_input.x, 0, _input.y));
     }
 

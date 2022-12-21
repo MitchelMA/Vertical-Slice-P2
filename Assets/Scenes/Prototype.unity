@@ -142,6 +142,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1096427968}
+    - target: {fileID: 1175027399164856370, guid: 96f826364b70eae44bfb3e908d9c70ed, type: 3}
+      propertyPath: _speed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4073348914007536812, guid: 96f826364b70eae44bfb3e908d9c70ed, type: 3}
       propertyPath: m_Name
       value: FacingCamChar
