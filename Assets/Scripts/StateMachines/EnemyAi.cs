@@ -1,13 +1,16 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class EnemyStateMachine : MonoBehaviour
+public class EnemyAi : MonoBehaviour
 {
     private BaseMachine<EnemyStates> _baseMachine;
     public UnityEvent<EnemyStates, EnemyStates> stateChanged = new UnityEvent<EnemyStates, EnemyStates>();
 
     private Vector3 _target;
     [SerializeField] private float speed = 5f;
+    [SerializeField] private Side boundsSide;
+
+    private Vector4 _bounds;
 
     private void Awake()
     {
@@ -17,16 +20,19 @@ public class EnemyStateMachine : MonoBehaviour
         _baseMachine.FromEveryState = EveryStateHandler;
 
         _target = transform.position;
+        _bounds = Bounds.Instance[boundsSide];
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log(Bounds.Instance[Side.Right]);
     }
 
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(transform.position.IsInBounds(_bounds));
     }
 
     private void FixedUpdate()
