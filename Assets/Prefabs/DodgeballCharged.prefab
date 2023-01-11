@@ -371,7 +371,7 @@ GameObject:
   - component: {fileID: 8002621940253702343}
   - component: {fileID: 868414239016661429}
   - component: {fileID: 6496448178779561629}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DodgeballCharged
   m_TagString: Untagged
   m_Icon: {fileID: 0}
