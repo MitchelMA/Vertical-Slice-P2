@@ -96,7 +96,7 @@ public class EnemyAi : MonoBehaviour
         switch (current)
         {
             case EnemyStates.Moving:
-                _target = GetRandomNextTarget(curPos, 2);
+                _target = GetRandomNextTarget(curPos, 5);
                 break;
             case EnemyStates.Evading:
                 _target = GetRandomNextTarget(curPos, 10);
