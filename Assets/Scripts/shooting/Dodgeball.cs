@@ -29,6 +29,13 @@ public class Dodgeball : MonoBehaviour
         }
     }
 
+    // The speed of the dodgeball
+    public float Speed => _speed;
+    // The normalized direction vector
+    public Vector3 Direction => _dir;
+    // The movement of the dodgeball
+    public Vector3 Movement => _dir * _speed;
+
     private shootDodgeball ShootDodgeball;
 
     // Start is called before the first frame update
@@ -50,7 +57,7 @@ public class Dodgeball : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(_speed * Time.deltaTime * _dir);
+        transform.Translate(Movement * Time.deltaTime);
     }
 
     public void Setup(Vector3 dir, Vector3 startPos, float speed = 1f)
