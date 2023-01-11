@@ -102,7 +102,8 @@ public class shootDodgeball : MonoBehaviour
         if (Input.GetKeyDown(ChargeDodgeball))
         {
             IsCharging = true;
-            walking._speed = 0f;
+            if(dodgeballs > 0)
+                walking._speed = 0f;
         }
 
         if (Input.GetKeyUp(ChargeDodgeball))
