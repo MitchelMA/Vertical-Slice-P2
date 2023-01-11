@@ -200,10 +200,12 @@ GameObject:
   - component: {fileID: 444834370}
   - component: {fileID: 444834369}
   - component: {fileID: 444834368}
+  - component: {fileID: 444834373}
   - component: {fileID: 444834367}
+  - component: {fileID: 444834372}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -224,7 +226,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   speed: 5
-  boundsSide: 1
+  minEvadeDist: 1
+  ballDetectRadius: 4
+  boundsSide: 0
+  DodgeballLayer: Dodgeball
 --- !u!136 &444834368
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -233,7 +238,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 444834366}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2
@@ -302,6 +307,45 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &444834372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 444834366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 577bcbde1439d4f45a1c1b2320297dcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  standFacingDir: {x: 1, y: 0}
+  healthChange:
+    m_PersistentCalls:
+      m_Calls: []
+  facingDirChange:
+    m_PersistentCalls:
+      m_Calls: []
+  healthZero:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!54 &444834373
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 444834366}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!1 &1011480624
 GameObject:
   m_ObjectHideFlags: 0
@@ -431,7 +475,7 @@ MonoBehaviour:
   height: 10
   middleLine: 0
   centre: {x: 0, y: 0}
-  gizmosHeight: 0
+  gizmosHeight: -0.01
 --- !u!4 &1352848974
 Transform:
   m_ObjectHideFlags: 0
@@ -539,3 +583,49 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1966694310
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1966694312}
+  - component: {fileID: 1966694311}
+  m_Layer: 0
+  m_Name: ballSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1966694311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1966694310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fb0f332a66eb864f89f757e4d99d90c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ball: {fileID: -1876114263252474154, guid: a7cf58bcdcdb2d1408c5f9c16e41937b, type: 3}
+  target: {fileID: 444834371}
+  speed: 10
+--- !u!4 &1966694312
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1966694310}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.32, y: 2.61, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

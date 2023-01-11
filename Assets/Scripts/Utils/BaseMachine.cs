@@ -78,21 +78,8 @@ public sealed class BaseMachine<T> where T : Enum
         return ret;
     }
 
-    public bool Unregister(T fromState)
-    {
-        bool ret = false;
-        try
-        {
-            _register.Remove(fromState);
-            ret = true;
-        }
-        catch
-        {
-            // ignore
-        }
-
-        return ret;
-    }
+    public bool Unregister(T fromState) => 
+        _register.Remove(fromState);
 
     public void GetNext()
     {
