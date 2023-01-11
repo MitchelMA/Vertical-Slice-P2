@@ -140,7 +140,7 @@ Transform:
   m_GameObject: {fileID: 4073348914007536812}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 622381161682120846}
   - {fileID: 1391206537}
@@ -229,7 +229,8 @@ MonoBehaviour:
   ballCount: 2
   targetIndex: 0
   chargeTimer: 0
-  counter: {fileID: 498014624}
+  counter: {fileID: 4759866642274346345}
+  counterContainer: {fileID: 1391206536}
   side: 1
   dodgeball: {fileID: -1876114263252474154, guid: a7cf58bcdcdb2d1408c5f9c16e41937b, type: 3}
   chargedDodgeball: {fileID: 8002621940253702343, guid: d3e94cd164ccf6341880107d9d753ceb, type: 3}
@@ -296,14 +297,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62bbe62935226794cbac471b579570a7, type: 3}
+--- !u!1 &1391206536 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5188936233199314864, guid: 62bbe62935226794cbac471b579570a7, type: 3}
+  m_PrefabInstance: {fileID: 5188936234559571768}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1391206537 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5188936233199314865, guid: 62bbe62935226794cbac471b579570a7, type: 3}
   m_PrefabInstance: {fileID: 5188936234559571768}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &498014624 stripped
+--- !u!114 &4759866642274346345 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5188936234084114072, guid: 62bbe62935226794cbac471b579570a7, type: 3}
+  m_CorrespondingSourceObject: {fileID: 724164185200386641, guid: 62bbe62935226794cbac471b579570a7, type: 3}
   m_PrefabInstance: {fileID: 5188936234559571768}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
