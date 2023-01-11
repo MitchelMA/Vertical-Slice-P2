@@ -11,6 +11,7 @@ public abstract class Shooter : MonoBehaviour
     [SerializeField] protected int targetIndex;
     [SerializeField] protected float chargeTimer;
     [SerializeField] protected TextMeshProUGUI counter;
+    [SerializeField] private GameObject counterContainer;
     [SerializeField] protected Side side;
     [SerializeField] protected Dodgeball dodgeball;
     [SerializeField] protected Dodgeball chargedDodgeball;
@@ -20,10 +21,38 @@ public abstract class Shooter : MonoBehaviour
     protected BoxCollider _collider;
     protected bool _isCharging = false;
 
+    public int BallCount
+    {
+        get => ballCount;
+        set
+        {
+            ballCount = value;
+            counter.SetText(ballCount.ToString());
+            counterContainer.SetActive(ballCount != 0);
+        }
+    }
+
+    public int TargetIndex
+    {
+        get => targetIndex;
+        set
+        {
+            int val = value;
+            val %= _targets.Length;
+            if (val < 0)
+                val = 0;
+
+            targetIndex = val;
+        }
+    }
+
+    public Character CurrentTarget => _targets[targetIndex];
+
     // Start is called before the first frame update
     protected virtual void Start()
     {
         _collider = GetComponent<BoxCollider>();
+        counter.SetText(BallCount.ToString());
     }
 
     protected virtual (float, Dodgeball) GetDodgeBall()
@@ -36,18 +65,16 @@ public abstract class Shooter : MonoBehaviour
 
     protected virtual bool Shoot()
     {
-        if (ballCount <= 0)
+        if (BallCount <= 0)
             return false;
 
-        Vector3 dir = _targets[targetIndex].transform.position - transform.position;
+        Vector3 dir = CurrentTarget.transform.position - transform.position;
 
         var (speedMult, ball) = GetDodgeBall();
         var clone = Instantiate(ball);
         clone.Setup(dir, transform.position + transform.right, throwSpeed * speedMult);
 
-        ballCount -= 1;
-        counter.SetText(ballCount.ToString());
-
+        BallCount -= 1;
         return true;
     }
 }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [RequireComponent(typeof(Walking))]
@@ -33,6 +34,10 @@ public class PlayerShooter : Shooter
     {
         base.Start();
         _walking = GetComponent<Walking>();
+        int other = (int) side;
+        other++;
+        other %= 2;
+        _targets = TeamsData.Instance[(Side)other].Members.ToArray();
     }
 
 
@@ -63,8 +68,6 @@ public class PlayerShooter : Shooter
     public void UpdateTarget()
     {
         if (!Input.GetKeyDown(targetChange)) return;
-        targetIndex += 1;
-        targetIndex %= _targets.Length;
-        print(targetIndex);
+        TargetIndex += 1;
     }
 }

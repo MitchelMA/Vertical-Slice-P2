@@ -408,6 +408,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTag: Player
+  enemyTag: Enemy
 --- !u!114 &8002621940253702343
 MonoBehaviour:
   m_ObjectHideFlags: 0
