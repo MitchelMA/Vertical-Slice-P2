@@ -67,7 +67,7 @@ public class EnemyAi : MonoBehaviour
         Vector3 newPos = Vector3.MoveTowards(currentPos, _target, speed * Time.deltaTime);
         if (!newPos.IsInBounds(_bounds))
             return EnemyStates.Idle;
-        
+
         transform.position = newPos;
         return EnemyStates.Moving;
     }
@@ -82,7 +82,7 @@ public class EnemyAi : MonoBehaviour
         Vector3 newPos = Vector3.MoveTowards(currentPos, _target, speed * Time.deltaTime);
         if (!newPos.IsInBounds(_bounds))
             return EnemyStates.Idle;
-        
+
         transform.position = newPos;
         return EnemyStates.Evading;
     }
@@ -167,7 +167,13 @@ public class EnemyAi : MonoBehaviour
     {
         Vector3 target = new Vector3(fromPos.x + (Random.value - 0.5f) * multiplier, fromPos.y,
             fromPos.z + (Random.value - 0.5f) * multiplier);
-        
+
+        while (!target.IsInBounds(_bounds))
+        {
+            target = new Vector3(fromPos.x + (Random.value - 0.5f) * multiplier, fromPos.y,
+                fromPos.z + (Random.value - 0.5f) * multiplier);
+        }
+
         return target;
     }
 }
