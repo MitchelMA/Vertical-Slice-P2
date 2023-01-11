@@ -47,7 +47,7 @@ public class shootDodgeball : MonoBehaviour
                 Shoot();
                 // reset charge timer
                 ChargeTimer = 0;
-                walking._Speed = 5f;
+                walking.CurrentSpeed = walking.speed;
             }
         }
     }
@@ -78,7 +78,7 @@ public class shootDodgeball : MonoBehaviour
         if (Input.GetKeyDown(ChargeDodgeball))
         {
             IsCharging = true;
-            walking._Speed = 0f;
+            walking.CurrentSpeed = 0f;
         }
 
         if (Input.GetKeyUp(ChargeDodgeball))

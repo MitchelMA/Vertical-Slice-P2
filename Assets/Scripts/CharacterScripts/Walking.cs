@@ -1,17 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Walking : MonoBehaviour
 {
-    [SerializeField] private Rigidbody rb;
-    public float _Speed = 5;
+    [SerializeField] private Rigidbody rb; 
+    public float speed = 5f;
+    [NonSerialized]
+    public float CurrentSpeed;
     private Vector2 _input = Vector2.zero;
+
+    private void Awake()
+    {
+        CurrentSpeed = speed;
+    }
 
     private void Update()
     {
         HandleInput();
-        var moveVec = _Speed * Time.deltaTime * _input;
+        var moveVec = CurrentSpeed * Time.deltaTime * _input;
 
         transform.Translate(new Vector3(moveVec.x, 0, moveVec.y));
     }
