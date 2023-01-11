@@ -132,7 +132,7 @@ public class shootDodgeball : MonoBehaviour
 
         // calculate the dir
         Vector3 dir = Targets[TargetIndex].transform.position - transform.position;
-        print(dir);
+        
        
 
         // setup the clone
