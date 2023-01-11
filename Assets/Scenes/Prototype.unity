@@ -440,6 +440,10 @@ PrefabInstance:
       propertyPath: facingCamera
       value: 
       objectReference: {fileID: 1096427968}
+    - target: {fileID: 5876866409406854210, guid: 96f826364b70eae44bfb3e908d9c70ed, type: 3}
+      propertyPath: m_Constraints
+      value: 126
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96f826364b70eae44bfb3e908d9c70ed, type: 3}
 --- !u!1 &405981611
@@ -872,6 +876,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0812502e7b183c7459f4df82b6210af8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  walking: {fileID: 813012100}
   speed: 10
   dodgeballs: 2
   TargetIndex: 0
@@ -883,6 +888,17 @@ MonoBehaviour:
   ChargeDodgeball: 101
   dodgeball: {fileID: -1876114263252474154, guid: a7cf58bcdcdb2d1408c5f9c16e41937b, type: 3}
   ChargedDodgeball: {fileID: 8002621940253702343, guid: d3e94cd164ccf6341880107d9d753ceb, type: 3}
+--- !u!114 &813012100 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1175027399164856370, guid: 96f826364b70eae44bfb3e908d9c70ed, type: 3}
+  m_PrefabInstance: {fileID: 371681778}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813012097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 485454763cc5c3642904b14215544345, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &813012103 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4083453525666969287, guid: 96f826364b70eae44bfb3e908d9c70ed, type: 3}
