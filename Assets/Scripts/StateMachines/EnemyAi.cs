@@ -1,4 +1,5 @@
 using System;
+using shooting;
 using UnityEngine;
 using UnityEngine.Events;
 using Random = UnityEngine.Random;
@@ -7,10 +8,12 @@ public class EnemyAi : MonoBehaviour
 {
     private BaseMachine<EnemyStates> _baseMachine;
     public UnityEvent<EnemyStates, EnemyStates> stateChanged = new UnityEvent<EnemyStates, EnemyStates>();
+    private EnemyShooter _shooter;
 
     private Vector3 _target;
     [SerializeField] private float speed = 5f;
     [SerializeField] private float minEvadeDist = 1f;
+    [SerializeField] private float minDroppedDuration = 0.1f;
     [SerializeField] private float ballDetectRadius = 4f;
     [SerializeField] private Side boundsSide;
     [SerializeField] private string DodgeballLayer;
@@ -19,6 +22,7 @@ public class EnemyAi : MonoBehaviour
 
     private void Awake()
     {
+        _shooter = GetComponent<EnemyShooter>();
         _baseMachine = new BaseMachine<EnemyStates>(EnemyStates.Idle, this);
         _baseMachine.StateChanged += StateChangedListener;
         _baseMachine.StateChanged += stateChanged.Invoke;
@@ -44,6 +48,9 @@ public class EnemyAi : MonoBehaviour
         // check for thrown balls to evade
         if (ShouldEvade())
             return EnemyStates.Evading;
+
+        if (ShouldThrow())
+            return EnemyStates.Throwing; 
 
         Vector3? val = ShouldPickup();
         if (val != null)
@@ -98,7 +105,7 @@ public class EnemyAi : MonoBehaviour
     private EnemyStates HandlePickup()
     {
         Vector3 currentPos = transform.position;
-        if (Vector3.Distance(currentPos, _target) < 0.2f)
+        if (Vector3.Distance(currentPos, _target) < 0.6f)
         {
             return EnemyStates.Idle;
         }
@@ -165,8 +172,13 @@ public class EnemyAi : MonoBehaviour
         if (!dodgeball.WasDropped)
             return null;
 
+        if (dodgeball.DroppedDuration < minDroppedDuration)
+            return null;
+
         return ballPos;
     }
+
+    private bool ShouldThrow() => _shooter.BallCount > 0;
 
     private Dodgeball GetClosestBall()
     {

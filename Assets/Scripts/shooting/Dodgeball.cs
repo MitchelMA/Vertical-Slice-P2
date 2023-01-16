@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Dodgeball : MonoBehaviour
@@ -8,12 +9,14 @@ public class Dodgeball : MonoBehaviour
     private float _speed;
     public int damageAmount;
     private Vector3 _dir;
-    public string enemyTag;
     public string[] effectTags = new string[2];
 
     [SerializeField]
     private Rigidbody rigidBody;
     private bool _wasDropped;
+    private float _droppedDuration = 0f;
+
+    public float DroppedDuration => _droppedDuration;
 
     public bool WasDropped
     {
@@ -22,6 +25,9 @@ public class Dodgeball : MonoBehaviour
         {
             if (value == _wasDropped)
                 return;
+
+            if (_wasDropped)
+                _droppedDuration = 0;
 
             _wasDropped = value;
             rigidBody.useGravity = _wasDropped;
@@ -54,7 +60,17 @@ public class Dodgeball : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        var nextPos = transform.position + Movement * Time.deltaTime;
+        if (!nextPos.IsInBounds(Bounds.Instance.OuterBounds))
+            WasDropped = true;
+        
         transform.Translate(Movement * Time.deltaTime);
+    }
+
+    private void FixedUpdate()
+    {
+        if (WasDropped)
+            _droppedDuration += Time.fixedDeltaTime;
     }
 
     public void Setup(Vector3 dir, Vector3 startPos, float speed = 1f)
@@ -68,7 +84,7 @@ public class Dodgeball : MonoBehaviour
     {
         var hitObj = collision.gameObject;
         var CharData = hitObj.GetComponent<Character>();
-        if (collision.gameObject.tag == enemyTag)
+        if (effectTags.Contains(collision.gameObject.tag) && !WasDropped)
         {
             CharData.TakeDamage(damageAmount);
             WasDropped = true;

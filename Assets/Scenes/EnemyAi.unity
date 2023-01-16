@@ -228,7 +228,8 @@ MonoBehaviour:
       m_Calls: []
   speed: 5
   minEvadeDist: 1
-  ballDetectRadius: 4
+  minDroppedDuration: 0.1
+  ballDetectRadius: 10
   boundsSide: 0
   DodgeballLayer: Dodgeball
 --- !u!136 &444834368
@@ -500,11 +501,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 195cf35c91b317345a9210f3d373b87c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 17.74
+  width: 14.5
   height: 10
   middleLine: 0
   centre: {x: 0, y: 0}
-  gizmosHeight: -0.01
+  gizmosHeight: 0
 --- !u!4 &1352848974
 Transform:
   m_ObjectHideFlags: 0
@@ -526,6 +527,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 444834371}
     m_Modifications:
+    - target: {fileID: 5188936233129060671, guid: 62bbe62935226794cbac471b579570a7, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5188936233199314864, guid: 62bbe62935226794cbac471b579570a7, type: 3}
       propertyPath: m_Name
       value: BallCounter
@@ -605,6 +610,10 @@ PrefabInstance:
     - target: {fileID: 5188936233199314870, guid: 62bbe62935226794cbac471b579570a7, type: 3}
       propertyPath: m_SpriteSortPoint
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5188936234198829463, guid: 62bbe62935226794cbac471b579570a7, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62bbe62935226794cbac471b579570a7, type: 3}
