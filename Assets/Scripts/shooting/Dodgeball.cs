@@ -36,14 +36,10 @@ public class Dodgeball : MonoBehaviour
     // The movement of the dodgeball
     public Vector3 Movement => _dir * _speed;
 
-    private shootDodgeball ShootDodgeball;
-
     // Start is called before the first frame update
     private IEnumerator Start()
     {
         _wasDropped=false;
-        ShootDodgeball = FindObjectOfType<shootDodgeball>();
-
 
         if (TryGetComponent<SphereCollider>(out var collider))
         {
