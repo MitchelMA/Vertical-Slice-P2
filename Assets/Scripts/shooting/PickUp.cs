@@ -1,14 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [RequireComponent(typeof(Dodgeball))]
 public class PickUp : MonoBehaviour
 {
-
-    Dodgeball dodgeBall;
-    public string playerTag;
-    public string enemyTag;
+    private Dodgeball dodgeBall;
+    public string[] PickUpAbleTags;
 
 
     void Start()
@@ -19,7 +18,7 @@ public class PickUp : MonoBehaviour
     
     private void OnCollisionEnter(Collision collision)
     {
-        if ((!collision.gameObject.CompareTag(playerTag) && !collision.gameObject.CompareTag(enemyTag))
+        if ((!PickUpAbleTags.Contains(collision.gameObject.tag))
             || !dodgeBall.WasDropped) return;
         
         var shooter = collision.gameObject.GetComponent<Shooter>();

@@ -9,6 +9,7 @@ public class Dodgeball : MonoBehaviour
     public int damageAmount;
     private Vector3 _dir;
     public string enemyTag;
+    public string[] effectTags = new string[2];
 
     [SerializeField]
     private Rigidbody rigidBody;

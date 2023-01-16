@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-[RequireComponent(typeof(BoxCollider))]
 public abstract class Shooter : MonoBehaviour
 {
     [SerializeField] protected float throwSpeed = 2f;

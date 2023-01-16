@@ -45,6 +45,13 @@ public class EnemyAi : MonoBehaviour
         if (ShouldEvade())
             return EnemyStates.Evading;
 
+        Vector3? val = ShouldPickup();
+        if (val != null)
+        {
+            _target = (Vector3) val;
+            return EnemyStates.Pickup;
+        }
+
         return currentState;
     }
 
@@ -87,6 +94,24 @@ public class EnemyAi : MonoBehaviour
         return EnemyStates.Evading;
     }
 
+    [StateMethod((int) EnemyStates.Pickup)]
+    private EnemyStates HandlePickup()
+    {
+        Vector3 currentPos = transform.position;
+        if (Vector3.Distance(currentPos, _target) < 0.2f)
+        {
+            return EnemyStates.Idle;
+        }
+
+        Vector3 tar = new Vector3(_target.x, transform.position.y, _target.z);
+        Vector3 newPos = Vector3.MoveTowards(currentPos, tar, speed * Time.deltaTime);
+        if (!newPos.IsInBounds(_bounds))
+            return EnemyStates.Idle;
+
+        transform.position = newPos;
+        return EnemyStates.Pickup;
+    }
+    
     private void StateChangedListener(EnemyStates old, EnemyStates current)
     {
         Debug.Log($"State-Changed: {old} -> {current}");
@@ -111,15 +136,10 @@ public class EnemyAi : MonoBehaviour
 
     private bool ShouldEvade()
     {
-        int layerMask = LayerMask.GetMask(DodgeballLayer);
-
-        Collider[] colliders = new Collider[10];
-        var size = Physics.OverlapSphereNonAlloc(transform.position, ballDetectRadius, colliders, layerMask);
-        if (size == 0)
+        Dodgeball dodgeball = GetClosestBall();
+        if (dodgeball == null)
             return false;
-
-        Collider closest = GetClosest(colliders);
-        Dodgeball dodgeball = closest.GetComponent<Dodgeball>();
+        
         Vector3 ballPos = dodgeball.transform.position;
         if (dodgeball.Movement.magnitude == 0 || dodgeball.WasDropped)
             return false;
@@ -133,6 +153,32 @@ public class EnemyAi : MonoBehaviour
             return true;
 
         return false;
+    }
+
+    private Vector3? ShouldPickup()
+    {
+        Dodgeball dodgeball = GetClosestBall();
+        if (dodgeball == null)
+            return null;
+
+        Vector3 ballPos = dodgeball.transform.position;
+        if (!dodgeball.WasDropped)
+            return null;
+
+        return ballPos;
+    }
+
+    private Dodgeball GetClosestBall()
+    {
+        int layerMask = LayerMask.GetMask(DodgeballLayer);
+
+        Collider[] colliders = new Collider[10];
+        var size = Physics.OverlapSphereNonAlloc(transform.position, ballDetectRadius, colliders, layerMask);
+        if (size == 0)
+            return null;
+
+        Collider cc = GetClosest(colliders);
+        return cc.GetComponent<Dodgeball>();
     }
 
     private Collider GetClosest(params Collider[] colliders)
