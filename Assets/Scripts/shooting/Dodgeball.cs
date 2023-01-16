@@ -25,17 +25,21 @@ public class Dodgeball : MonoBehaviour
             _wasDropped = value;
             rigidBody.useGravity = _wasDropped;
             _speed = 0f;
+            GetComponent<Transform>().localScale = new Vector3(0.25f,0.25f,0.25f);
         }
     }
 
-    private shootDodgeball ShootDodgeball;
+    // The speed of the dodgeball
+    public float Speed => _speed;
+    // The normalized direction vector
+    public Vector3 Direction => _dir;
+    // The movement of the dodgeball
+    public Vector3 Movement => _dir * _speed;
 
     // Start is called before the first frame update
     private IEnumerator Start()
     {
         _wasDropped=false;
-        ShootDodgeball = FindObjectOfType<shootDodgeball>();
-
 
         if (TryGetComponent<SphereCollider>(out var collider))
         {
@@ -49,14 +53,13 @@ public class Dodgeball : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(_speed * Time.deltaTime * _dir);
+        transform.Translate(Movement * Time.deltaTime);
     }
 
     public void Setup(Vector3 dir, Vector3 startPos, float speed = 1f)
     {
         transform.position = startPos;
         _dir = dir.normalized;
-        print(_dir);
         _speed = speed;
     }
 
