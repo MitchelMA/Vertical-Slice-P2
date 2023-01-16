@@ -36,7 +36,6 @@ public class Walking : MonoBehaviour
         inp.x = Input.GetAxisRaw("Horizontal");
         inp.y = Input.GetAxisRaw("Vertical");
         _input = inp.normalized;
-        _input *= _speed * Time.deltaTime;
     }
 }
 

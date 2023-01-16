@@ -22,8 +22,21 @@ public class PlayerShooter : Shooter
 
             if (prev)
             {
-                Shoot();
-                chargeTimer = 0;
+                Shoot(false);
+                _walking.CurrentSpeed = _walking.speed;
+            }
+        }
+    }
+
+    public float ChargeTimer
+    {
+        get => _chargeTimer;
+        set
+        {
+            _chargeTimer = value;
+            if (_chargeTimer > chargedValue)
+            {
+                Shoot(true);
                 _walking.CurrentSpeed = _walking.speed;
             }
         }
@@ -62,12 +75,20 @@ public class PlayerShooter : Shooter
         }
 
         if (IsCharging)
-            chargeTimer += Time.deltaTime;
+            ChargeTimer += Time.deltaTime;
     }
 
     public void UpdateTarget()
     {
         if (!Input.GetKeyDown(targetChange)) return;
         TargetIndex += 1;
+    }
+
+    protected bool Shoot(bool fromAutoCharge = false)
+    {
+        if (fromAutoCharge)
+            _isCharging = false;
+
+        return base.Shoot();
     }
 }
