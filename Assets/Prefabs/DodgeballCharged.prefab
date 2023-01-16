@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7768292797693301666}
   - component: {fileID: 3375264840815829117}
+  - component: {fileID: 4166457710982970238}
   m_Layer: 0
   m_Name: dodgeballsprite
   m_TagString: Untagged
@@ -70,7 +71,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 0
   m_Sprite: {fileID: 2023522969545607760, guid: 6425a021a65da97428b2191d30f37e18, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -82,6 +83,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4166457710982970238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1487991861566519568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3c2ea648da3524793f51a909a9adaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  height: 1
 --- !u!1 &4431385950095853042
 GameObject:
   m_ObjectHideFlags: 0
@@ -153,7 +167,7 @@ TrailRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Time: 0.3
   m_Parameters:
     serializedVersion: 3
@@ -386,8 +400,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5970855193141603449}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.7574923, y: 1.588, z: -1.6714859}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children:
   - {fileID: 7768292797693301666}
   - {fileID: 8121612161947756208}
@@ -435,7 +449,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.61
+  m_Radius: 1.6
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &6496448178779561629
 Rigidbody:

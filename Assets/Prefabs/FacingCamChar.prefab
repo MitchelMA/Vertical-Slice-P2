@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 5876866409406854210}
   - component: {fileID: 1175027399164856370}
   - component: {fileID: 7478683421335526650}
-  - component: {fileID: 813012099}
+  - component: {fileID: 9093060577035974263}
   m_Layer: 0
   m_Name: FacingCamChar
   m_TagString: Player
@@ -158,7 +158,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 7.41, y: 9.04, z: 0.35}
+  m_Size: {x: 7.41, y: 9.04, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &5876866409406854210
 Rigidbody:
@@ -189,6 +189,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 5876866409406854210}
+  side: 1
   speed: 5
 --- !u!114 &7478683421335526650
 MonoBehaviour:
@@ -213,7 +214,7 @@ MonoBehaviour:
   healthZero:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &813012099
+--- !u!114 &9093060577035974263
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -228,7 +229,7 @@ MonoBehaviour:
   throwSpeed: 10
   ballCount: 2
   targetIndex: 0
-  chargeTimer: 0
+  chargedValue: 1
   counter: {fileID: 4759866642274346345}
   counterContainer: {fileID: 1391206536}
   side: 1

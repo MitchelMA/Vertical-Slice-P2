@@ -25,6 +25,7 @@ public class Dodgeball : MonoBehaviour
             _wasDropped = value;
             rigidBody.useGravity = _wasDropped;
             _speed = 0f;
+            GetComponent<Transform>().localScale = new Vector3(0.25f,0.25f,0.25f);
         }
     }
 

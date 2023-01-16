@@ -9,7 +9,7 @@ public abstract class Shooter : MonoBehaviour
     [SerializeField] protected float throwSpeed = 2f;
     [SerializeField] protected int ballCount = 2;
     [SerializeField] protected int targetIndex;
-    [SerializeField] protected float chargeTimer;
+    [SerializeField] protected float chargedValue;
     [SerializeField] protected TextMeshProUGUI counter;
     [SerializeField] private GameObject counterContainer;
     [SerializeField] protected Side side;
@@ -20,6 +20,7 @@ public abstract class Shooter : MonoBehaviour
     protected Character[] _targets;
     protected BoxCollider _collider;
     protected bool _isCharging = false;
+    protected float _chargeTimer;
 
     public int BallCount
     {
@@ -57,7 +58,7 @@ public abstract class Shooter : MonoBehaviour
 
     protected virtual (float, Dodgeball) GetDodgeBall()
     {
-        if (chargeTimer > 1f)
+        if (_chargeTimer > chargedValue)
             return (2, chargedDodgeball);
         
         return (1, dodgeball);
@@ -75,6 +76,7 @@ public abstract class Shooter : MonoBehaviour
         clone.Setup(dir, transform.position + transform.right, throwSpeed * speedMult);
 
         BallCount -= 1;
+        _chargeTimer = 0;
         return true;
     }
 }
