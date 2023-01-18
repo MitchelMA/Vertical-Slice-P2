@@ -143,6 +143,9 @@ public class EnemyAi : MonoBehaviour
     [StateMethod((int) EnemyStates.Throw)]
     private EnemyStates HandleThrow()
     {
+        if (_shooter.IsThrowing)
+            return EnemyStates.Throw;
+        
         // get the other side
         int targetSide = (int)side;
         targetSide++;
@@ -155,12 +158,13 @@ public class EnemyAi : MonoBehaviour
             return EnemyStates.Idle;
         
         int target = Random.Range(0, l - 1);
-        print(target);
         
         // set the target
         _shooter.TargetIndex = target;
         // shoot at that target
         _shooter.Shoot(_chargeValue);
+        if (_shooter.IsThrowing)
+            return EnemyStates.Throw;
         
         return EnemyStates.Idle;
     }

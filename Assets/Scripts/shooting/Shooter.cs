@@ -28,7 +28,7 @@ public abstract class Shooter : MonoBehaviour
     protected Character[] _targets;
     protected bool _isCharging = false;
     protected float _chargeTimer;
-    protected bool isThrowing { get; private set; } = false;
+    public bool IsThrowing { get; private set; } = false;
 
     public int BallCount
     {
@@ -77,7 +77,7 @@ public abstract class Shooter : MonoBehaviour
 
     protected virtual IEnumerator Shoot()
     {
-        if (isThrowing)
+        if (IsThrowing)
         {
             shootEnd.Invoke();
             yield break;
@@ -89,20 +89,21 @@ public abstract class Shooter : MonoBehaviour
             yield break;
         }
         
-        isThrowing = true;
+        IsThrowing = true;
         
         Vector3 dir = CurrentTarget.transform.position - transform.position;
 
         var (speedMult, ball) = GetDodgeBall();
-        BallCount -= 1;
-        _chargeTimer = 0;
         
         shootStart.Invoke();
         yield return new WaitForSeconds(throwTimeout);
+        
+        BallCount -= 1;
+        _chargeTimer = 0;
         var clone = Instantiate(ball);
         clone.Setup(dir, transform.position + BallSpawnPosition, throwSpeed * speedMult);
         
         shootEnd.Invoke();
-        isThrowing = false;
+        IsThrowing = false;
     }
 }

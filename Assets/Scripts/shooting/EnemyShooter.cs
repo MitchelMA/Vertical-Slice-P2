@@ -20,19 +20,9 @@ public class EnemyShooter : Shooter
         return (1, dodgeball);
     }
 
-    public bool Shoot(float val)
+    public void Shoot(float val)
     {
-        if (ballCount <= 0)
-            return false;
-
-        Vector3 dir = CurrentTarget.transform.position - transform.position;
-
-        var (speedMult, ball) = GetDodgeBall(val);
-        var clone = Instantiate(ball);
-        clone.Setup(dir, transform.position + BallSpawnPosition, throwSpeed * speedMult);
-
-        BallCount -= 1;
-        shootStart.Invoke();
-        return true;
+        _chargeTimer = val;
+        StartCoroutine(base.Shoot());
     }
 }
