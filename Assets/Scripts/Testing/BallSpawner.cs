@@ -16,7 +16,7 @@ public class BallSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             Vector3 dir = target.position - transform.position;
             var clone = Instantiate(ball);

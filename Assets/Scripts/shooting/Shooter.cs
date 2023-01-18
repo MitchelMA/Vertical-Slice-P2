@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 
@@ -14,7 +15,6 @@ public abstract class Shooter : MonoBehaviour
     [SerializeField] protected Side side;
     [SerializeField] protected Dodgeball dodgeball;
     [SerializeField] protected Dodgeball chargedDodgeball;
-    [SerializeField] protected KeyCode shootKey = KeyCode.E;
 
     protected Character[] _targets;
     protected bool _isCharging = false;
@@ -50,6 +50,10 @@ public abstract class Shooter : MonoBehaviour
     // Start is called before the first frame update
     protected virtual void Start()
     {
+        int other = (int) side;
+        other++;
+        other %= 2;
+        _targets = TeamsData.Instance[(Side) other].Members.ToArray();
         counter.SetText(BallCount.ToString());
     }
 
@@ -57,7 +61,7 @@ public abstract class Shooter : MonoBehaviour
     {
         if (_chargeTimer > chargedValue)
             return (2, chargedDodgeball);
-        
+
         return (1, dodgeball);
     }
 

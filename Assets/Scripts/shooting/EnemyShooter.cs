@@ -29,9 +29,9 @@ public class EnemyShooter : Shooter
 
         var (speedMult, ball) = GetDodgeBall(val);
         var clone = Instantiate(ball);
-        clone.Setup(dir, transform.position + transform.right, throwSpeed * speedMult);
+        clone.Setup(dir, transform.position - transform.right, throwSpeed * speedMult);
 
-        ballCount -= 1;
+        BallCount -= 1;
         return true;
     }
 }

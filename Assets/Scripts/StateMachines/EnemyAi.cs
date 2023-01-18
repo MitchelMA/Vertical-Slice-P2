@@ -1,5 +1,4 @@
 using System;
-using shooting;
 using UnityEngine;
 using UnityEngine.Events;
 using Random = UnityEngine.Random;
@@ -12,6 +11,7 @@ public class EnemyAi : MonoBehaviour
     private EnemyShooter _shooter;
 
     private Vector3 _target;
+    [SerializeField] private Side side;
     [SerializeField] private float speed = 5f;
     [SerializeField] private float minEvadeDist = 1f;
     [SerializeField] private float minDroppedDuration = 0.1f;
@@ -52,10 +52,9 @@ public class EnemyAi : MonoBehaviour
         if (ShouldEvade())
             return EnemyStates.Evading;
 
-        // if (StartCharge())
-        //     return EnemyStates.Throw;
+        // check if the enemy should throw
         _chargeValue = StartCharge();
-        if (_chargeValue > 0f)
+        if (_chargeValue > 0f && currentState != EnemyStates.Charging && currentState != EnemyStates.Throw)
         {
             _chargeTimer = _chargeValue;  
             return EnemyStates.Charging;
@@ -144,6 +143,26 @@ public class EnemyAi : MonoBehaviour
     [StateMethod((int) EnemyStates.Throw)]
     private EnemyStates HandleThrow()
     {
+        // get the other side
+        int targetSide = (int)side;
+        targetSide++;
+        targetSide %= 2;
+
+        // choose what member we should throw at
+        Team otherTeam = TeamsData.Instance.Teams[targetSide];
+        int l = otherTeam.Members.Count;
+        if (l == 0)
+            return EnemyStates.Idle;
+        
+        int target = Random.Range(0, l - 1);
+        print(target);
+        
+        // set the target
+        _shooter.TargetIndex = target;
+        // shoot at that target
+        _shooter.Shoot(_chargeValue);
+        
+        return EnemyStates.Idle;
     }
     
     private void StateChangedListener(EnemyStates old, EnemyStates current)

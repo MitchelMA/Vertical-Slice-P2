@@ -16,6 +16,8 @@ public class Dodgeball : MonoBehaviour
     private bool _wasDropped;
     private float _droppedDuration = 0f;
 
+    private bool _hasHitAny = false;
+    
     public float DroppedDuration => _droppedDuration;
 
     public bool WasDropped
@@ -82,14 +84,25 @@ public class Dodgeball : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        var hitObj = collision.gameObject;
-        var CharData = hitObj.GetComponent<Character>();
-        if (effectTags.Contains(collision.gameObject.tag) && !WasDropped)
+        HandleAny(collision.gameObject);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        HandleAny(collision.gameObject);
+    }
+
+    private void HandleAny(GameObject hitObj)
+    {
+        if (_hasHitAny)
+            return;
+
+        _hasHitAny = true;
+        var charData = hitObj.GetComponent<Character>();
+        if (effectTags.Contains(hitObj.tag) && !WasDropped)
         {
-            CharData.TakeDamage(damageAmount);
+            charData.TakeDamage(damageAmount);
             WasDropped = true;
         }
     }
-
-
 }

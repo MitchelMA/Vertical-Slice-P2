@@ -17,15 +17,23 @@ public class PickUp : MonoBehaviour
         dodgeBall = GetComponent<Dodgeball>();
     }
 
-    
-
-    private void OnTriggerStay(Collider collision)
+    private void OnTriggerStay(Collider other)
     {
-        if (!pickUpAbleTags.Contains(collision.gameObject.tag) || !dodgeBall.WasDropped ||
+       HandleAny(other.gameObject); 
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+       HandleAny(collision.gameObject); 
+    }
+
+    private void HandleAny(GameObject hitObj)
+    {
+        if (!pickUpAbleTags.Contains(hitObj.tag) || !dodgeBall.WasDropped ||
             !(dodgeBall.DroppedDuration > 1f)) return;
-        
-        var shooter = collision.gameObject.GetComponent<Shooter>();
-        shooter.BallCount += 1;
-        Destroy(gameObject);
+         
+         var shooter = hitObj.GetComponent<Shooter>();
+         shooter.BallCount += 1;
+         Destroy(gameObject);       
     }
 }
