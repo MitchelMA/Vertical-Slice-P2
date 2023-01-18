@@ -13,6 +13,7 @@ public class targetUI : MonoBehaviour
     public GameObject ene2Shadow;
     public float blinkTime;
     public bool isBlinking;
+    public changeUI changeUI;
     
 
     // Start is called before the first frame update
@@ -24,6 +25,7 @@ public class targetUI : MonoBehaviour
     }
     public void track(int x){
         if(x == 0){
+            changeUI.changePlayer1();
             isBlinking = true;
             ene1Shadow.SetActive(true);
             StartCoroutine(BlinkChar(x));
@@ -33,6 +35,7 @@ public class targetUI : MonoBehaviour
             StartCoroutine(delay(x));
         }
         else if(x == 1){
+            changeUI.changePlayer2();
             isBlinking = true;
             ene2Shadow.SetActive(true);
             StartCoroutine(BlinkChar(x));
