@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Utils;
+using System.Linq;
 using UnityEngine;
 
 public class Dodgeball : MonoBehaviour
@@ -8,11 +10,16 @@ public class Dodgeball : MonoBehaviour
     private float _speed;
     public int damageAmount;
     private Vector3 _dir;
-    public string enemyTag;
+    public string[] effectTags = new string[2];
 
     [SerializeField]
     private Rigidbody rigidBody;
     private bool _wasDropped;
+    private float _droppedDuration = 0f;
+
+    private bool _hasHitAny = false;
+    
+    public float DroppedDuration => _droppedDuration;
 
     public bool WasDropped
     {
@@ -22,20 +29,27 @@ public class Dodgeball : MonoBehaviour
             if (value == _wasDropped)
                 return;
 
+            if (_wasDropped)
+                _droppedDuration = 0;
+
             _wasDropped = value;
             rigidBody.useGravity = _wasDropped;
             _speed = 0f;
+            GetComponent<Transform>().localScale = new Vector3(0.25f,0.25f,0.25f);
         }
     }
 
-    private shootDodgeball ShootDodgeball;
+    // The speed of the dodgeball
+    public float Speed => _speed;
+    // The normalized direction vector
+    public Vector3 Direction => _dir;
+    // The movement of the dodgeball
+    public Vector3 Movement => _dir * _speed;
 
     // Start is called before the first frame update
     private IEnumerator Start()
     {
         _wasDropped=false;
-        ShootDodgeball = FindObjectOfType<shootDodgeball>();
-
 
         if (TryGetComponent<SphereCollider>(out var collider))
         {
@@ -49,27 +63,44 @@ public class Dodgeball : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(_speed * Time.deltaTime * _dir);
+        if (!transform.Translate(Movement * Time.deltaTime, Bounds.Instance.OuterBounds))
+            WasDropped = true;
+    }
+
+    private void FixedUpdate()
+    {
+        if (WasDropped)
+            _droppedDuration += Time.fixedDeltaTime;
     }
 
     public void Setup(Vector3 dir, Vector3 startPos, float speed = 1f)
     {
         transform.position = startPos;
         _dir = dir.normalized;
-        print(_dir);
         _speed = speed;
     }
 
     private void OnTriggerEnter(Collider collision)
     {
-        var hitObj = collision.gameObject;
-        var CharData = hitObj.GetComponent<Character>();
-        if (collision.gameObject.tag == enemyTag)
+        HandleAny(collision.gameObject);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        HandleAny(collision.gameObject);
+    }
+
+    private void HandleAny(GameObject hitObj)
+    {
+        if (_hasHitAny)
+            return;
+
+        _hasHitAny = true;
+        var charData = hitObj.GetComponent<Character>();
+        if (effectTags.Contains(hitObj.tag) && !WasDropped)
         {
-            CharData.TakeDamage(damageAmount);
+            charData.TakeDamage(damageAmount);
             WasDropped = true;
         }
     }
-
-
 }

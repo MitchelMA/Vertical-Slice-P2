@@ -69,4 +69,7 @@ public static class Vector3Extensions
 
         return ret;
     }
+
+    public static bool IsInBounds(this Vector3 vec3, Vector4 bounds) =>
+        (vec3.x > bounds.w && vec3.x < bounds.y) && (vec3.z > bounds.z && vec3.z < bounds.x);
 }
