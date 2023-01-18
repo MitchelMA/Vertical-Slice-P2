@@ -1,28 +1,39 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.Serialization;
 
+[RequireComponent(typeof(Dodgeball))]
 public class PickUp : MonoBehaviour
 {
-    shootDodgeball ShootDodgeball;
-    Dodgeball dodgeBall;
-    public string playerTag;
+    private Dodgeball dodgeBall;
+    public string[] pickUpAbleTags = new string[2];
 
 
     void Start()
     {
-        ShootDodgeball = FindObjectOfType<shootDodgeball>();
-        dodgeBall = FindObjectOfType<Dodgeball>();
+        dodgeBall = GetComponent<Dodgeball>();
     }
 
-    
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerStay(Collider other)
     {
-        if (collision.gameObject.tag == playerTag && dodgeBall.WasDropped == true)
-        {
-            Debug.Log("hit");
-            ShootDodgeball.dodgeballs += 1;
-            Destroy(gameObject);
-        }
+       HandleAny(other.gameObject); 
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+       HandleAny(collision.gameObject); 
+    }
+
+    private void HandleAny(GameObject hitObj)
+    {
+        if (!pickUpAbleTags.Contains(hitObj.tag) || !dodgeBall.WasDropped ||
+            !(dodgeBall.DroppedDuration > 1f)) return;
+         
+         var shooter = hitObj.GetComponent<Shooter>();
+         shooter.BallCount += 1;
+         Destroy(gameObject);       
     }
 }
