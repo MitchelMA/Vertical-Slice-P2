@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Utils;
 using System.Linq;
 using UnityEngine;
 
@@ -62,11 +63,8 @@ public class Dodgeball : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var nextPos = transform.position + Movement * Time.deltaTime;
-        if (!nextPos.IsInBounds(Bounds.Instance.OuterBounds))
+        if (!transform.Translate(Movement * Time.deltaTime, Bounds.Instance.OuterBounds))
             WasDropped = true;
-        
-        transform.Translate(Movement * Time.deltaTime);
     }
 
     private void FixedUpdate()
