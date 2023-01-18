@@ -473,7 +473,11 @@ MonoBehaviour:
   side: 0
   dodgeball: {fileID: 0}
   chargedDodgeball: {fileID: 0}
-  shot:
+  throwTimeout: 0.5
+  shootStart:
+    m_PersistentCalls:
+      m_Calls: []
+  shootEnd:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &335970332

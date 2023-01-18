@@ -30,7 +30,7 @@ public class PlayerAnimSystem : AnimSystem
         runAnimation.transform.localScale = new Vector3(character.FacingDirection.x > 0 ? 1 : -1, oldScale.y, oldScale.z);
     }
 
-    public void Shot()
+    public void ShootStart()
     {
         animator.SetTrigger(ThrowTrigger);
     }

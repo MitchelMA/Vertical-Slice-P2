@@ -8,8 +8,8 @@ public class EnemyShooter : Shooter
 
     protected override void Start()
     {
-       base.Start();
        _ai = GetComponent<EnemyAi>();
+       base.Start();
     }
 
     private (float, Dodgeball) GetDodgeBall(float val)
@@ -29,7 +29,7 @@ public class EnemyShooter : Shooter
 
         var (speedMult, ball) = GetDodgeBall(val);
         var clone = Instantiate(ball);
-        clone.Setup(dir, transform.position - transform.right, throwSpeed * speedMult);
+        clone.Setup(dir, transform.position + BallSpawnPosition, throwSpeed * speedMult);
 
         BallCount -= 1;
         shootStart.Invoke();

@@ -22,10 +22,13 @@ public abstract class Shooter : MonoBehaviour
 
     public UnityEvent shootStart = new UnityEvent();
     public UnityEvent shootEnd = new UnityEvent();
+    
+    protected Vector3 BallSpawnPosition => ((int) side * 2 - 1) *  Vector3.right;
 
     protected Character[] _targets;
     protected bool _isCharging = false;
     protected float _chargeTimer;
+    protected bool isThrowing { get; private set; } = false;
 
     public int BallCount
     {
@@ -74,20 +77,32 @@ public abstract class Shooter : MonoBehaviour
 
     protected virtual IEnumerator Shoot()
     {
-        if (BallCount <= 0)
-            yield return false;
+        if (isThrowing)
+        {
+            shootEnd.Invoke();
+            yield break;
+        }
 
+        if (BallCount <= 0)
+        {
+            shootEnd.Invoke();
+            yield break;
+        }
+        
+        isThrowing = true;
+        
         Vector3 dir = CurrentTarget.transform.position - transform.position;
 
         var (speedMult, ball) = GetDodgeBall();
-        shootStart.Invoke();
         BallCount -= 1;
         _chargeTimer = 0;
         
+        shootStart.Invoke();
         yield return new WaitForSeconds(throwTimeout);
         var clone = Instantiate(ball);
-        clone.Setup(dir, transform.position + transform.right, throwSpeed * speedMult);
+        clone.Setup(dir, transform.position + BallSpawnPosition, throwSpeed * speedMult);
+        
         shootEnd.Invoke();
-        yield return true;
+        isThrowing = false;
     }
 }
