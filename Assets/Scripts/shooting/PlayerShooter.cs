@@ -6,6 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(Walking))]
 public class PlayerShooter : Shooter
 {
+    [SerializeField] private KeyCode shootKey = KeyCode.E;
     [SerializeField] private KeyCode targetChange = KeyCode.F;
     private Walking _walking;
 
@@ -47,10 +48,6 @@ public class PlayerShooter : Shooter
     {
         base.Start();
         _walking = GetComponent<Walking>();
-        int other = (int) side;
-        other++;
-        other %= 2;
-        _targets = TeamsData.Instance[(Side)other].Members.ToArray();
     }
 
 

@@ -421,8 +421,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ae203405060d3e4b819ae33305de911, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTag: Player
-  enemyTag: Enemy
+  pickUpAbleTags:
+  - Player
+  - Enemy
 --- !u!114 &8002621940253702343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -436,7 +437,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 15
-  enemyTag: Enemy
+  effectTags:
+  - Player
+  - Enemy
   rigidBody: {fileID: 6496448178779561629}
 --- !u!135 &868414239016661429
 SphereCollider:
