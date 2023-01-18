@@ -1,0 +1,37 @@
+using System;
+using TMPro.EditorUtilities;
+using UnityEngine;
+
+public class PlayerAnimSystem : AnimSystem
+{
+    [SerializeField] private GameObject idleAnimation;
+    [SerializeField] private GameObject runAnimation;
+    [SerializeField] private GameObject throwAnimation;
+    private static readonly int IdleTrigger = Animator.StringToHash("IdleTrigger");
+    private static readonly int ThrowTrigger = Animator.StringToHash("ThrowTrigger");
+    private static readonly int RunTrigger = Animator.StringToHash("RunTrigger");
+
+    private void Start()
+    {
+        runAnimation.SetActive(false);
+        throwAnimation.SetActive(false);
+    }
+
+    private void FixedUpdate()
+    {
+        if (character.FacingDirection.magnitude <= 0.1f)
+        {
+            animator.SetTrigger(IdleTrigger);
+            return;
+        }
+        
+        animator.SetTrigger(RunTrigger);
+        Vector3 oldScale = runAnimation.transform.localScale;
+        runAnimation.transform.localScale = new Vector3(character.FacingDirection.x > 0 ? 1 : -1, oldScale.y, oldScale.z);
+    }
+
+    public void Shot()
+    {
+        animator.SetTrigger(ThrowTrigger);
+    }
+}

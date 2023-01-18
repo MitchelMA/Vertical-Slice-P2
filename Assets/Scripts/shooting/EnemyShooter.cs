@@ -32,6 +32,7 @@ public class EnemyShooter : Shooter
         clone.Setup(dir, transform.position - transform.right, throwSpeed * speedMult);
 
         BallCount -= 1;
+        shootStart.Invoke();
         return true;
     }
 }

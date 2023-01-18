@@ -20,6 +20,7 @@ public class Walking : MonoBehaviour
 
     private void Update()
     {
+        print(CurrentSpeed);
         HandleInput();
         var moveVec = CurrentSpeed * Time.deltaTime * _input;
 
