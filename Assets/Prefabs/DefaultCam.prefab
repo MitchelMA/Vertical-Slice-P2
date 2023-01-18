@@ -96,5 +96,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f533bc0152da530478a5acd38412903c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camSettings: {x: 30, y: 145}
-  focusPoint: {x: 0, y: 0, z: 0}
+  camSettings: {x: 21.6, y: 118.1}
+  focusPoint: {x: 2.98, y: -1.8, z: -2.15}
