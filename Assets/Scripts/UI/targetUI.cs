@@ -25,7 +25,7 @@ public class targetUI : MonoBehaviour
     }
     public void track(int x){
         if(x == 0){
-            changeUI.changePlayer1();
+            _changeUI.changePlayer1();
             isBlinking = true;
             _changeUI.changePlayer1();
             ene1Shadow.SetActive(true);
