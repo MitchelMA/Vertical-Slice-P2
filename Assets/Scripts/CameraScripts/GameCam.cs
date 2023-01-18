@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameCam : MonoBehaviour
+[RequireComponent(typeof(Camera))]
+public class GameCam : GenericSingleton<GameCam>
 {
     /// <summary>
     /// Settings of the camera.
@@ -12,13 +14,16 @@ public class GameCam : MonoBehaviour
     /// </summary>
     [SerializeField] private Vector2 camSettings = new Vector2(10, 60);
     [SerializeField] private Vector3 focusPoint;
-    
+
     private Vector3 _posDir = Vector3.forward;
-    // Start is called before the first frame update
-    void Start()
+    
+    public Camera Cam { get; private set; }
+
+    private void Awake()
     {
-        
+        Cam = GetComponent<Camera>();
     }
+
 
     // Update is called once per frame
     void Update()
