@@ -1,14 +1,21 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class FaceCamera : MonoBehaviour
 {
-    [SerializeField] private Camera facingCamera;
     [SerializeField] private float height = 1f;
+
+    private Camera facingCamera;
 
     private float _alphaAngle = 0;
     private float _betaAngle = 0;
+
+    private void Start()
+    {
+        facingCamera = GameCam.Instance.Cam;
+    }
 
     // Update is called once per frame
     private void Update()
