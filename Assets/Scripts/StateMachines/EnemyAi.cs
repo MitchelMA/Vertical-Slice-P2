@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using Random = UnityEngine.Random;
 
+[RequireComponent(typeof(EnemyShooter))]
 public class EnemyAi : MonoBehaviour
 {
     private BaseMachine<EnemyStates> _baseMachine;
@@ -19,6 +20,8 @@ public class EnemyAi : MonoBehaviour
     [SerializeField] private string DodgeballLayer;
 
     private Vector4 _bounds;
+    private float _chargeTimer = 0f;
+    private float _chargeValue = 0f;
 
     private void Awake()
     {
@@ -49,8 +52,15 @@ public class EnemyAi : MonoBehaviour
         if (ShouldEvade())
             return EnemyStates.Evading;
 
-        if (ShouldThrow())
-            return EnemyStates.Throwing; 
+        // if (StartCharge())
+        //     return EnemyStates.Throw;
+        _chargeValue = StartCharge();
+        if (_chargeValue > 0f)
+        {
+            _chargeTimer = _chargeValue;  
+            return EnemyStates.Charging;
+        }
+            
 
         Vector3? val = ShouldPickup();
         if (val != null)
@@ -118,6 +128,23 @@ public class EnemyAi : MonoBehaviour
         transform.position = newPos;
         return EnemyStates.Pickup;
     }
+
+    [StateMethod((int) EnemyStates.Charging)]
+    private EnemyStates HandleCharging()
+    {
+        if (_chargeTimer > 0)
+        {
+            _chargeTimer -= Time.fixedDeltaTime;
+            return EnemyStates.Charging;
+        }
+
+        return EnemyStates.Throw;
+    }
+
+    [StateMethod((int) EnemyStates.Throw)]
+    private EnemyStates HandleThrow()
+    {
+    }
     
     private void StateChangedListener(EnemyStates old, EnemyStates current)
     {
@@ -146,7 +173,7 @@ public class EnemyAi : MonoBehaviour
         Dodgeball dodgeball = GetClosestBall();
         if (dodgeball == null)
             return false;
-        
+
         Vector3 ballPos = dodgeball.transform.position;
         if (dodgeball.Movement.magnitude == 0 || dodgeball.WasDropped)
             return false;
@@ -178,7 +205,14 @@ public class EnemyAi : MonoBehaviour
         return ballPos;
     }
 
-    private bool ShouldThrow() => _shooter.BallCount > 0;
+    private float StartCharge()
+    {
+        if (_shooter.BallCount <= 0)
+            return 0f;
+
+        // return random value from [0, ..2] (inclusive)
+        return Random.value * 2f;
+    }
 
     private Dodgeball GetClosestBall()
     {

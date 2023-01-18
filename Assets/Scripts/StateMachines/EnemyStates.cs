@@ -4,5 +4,6 @@ public enum EnemyStates
     Moving,
     Evading,
     Pickup,
-    Throwing,
+    Charging,
+    Throw,
 }

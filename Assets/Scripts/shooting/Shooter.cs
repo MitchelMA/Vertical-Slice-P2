@@ -17,7 +17,6 @@ public abstract class Shooter : MonoBehaviour
     [SerializeField] protected KeyCode shootKey = KeyCode.E;
 
     protected Character[] _targets;
-    protected BoxCollider _collider;
     protected bool _isCharging = false;
     protected float _chargeTimer;
 
@@ -51,7 +50,6 @@ public abstract class Shooter : MonoBehaviour
     // Start is called before the first frame update
     protected virtual void Start()
     {
-        _collider = GetComponent<BoxCollider>();
         counter.SetText(BallCount.ToString());
     }
 
