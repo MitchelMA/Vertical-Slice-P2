@@ -13,11 +13,12 @@ public class targetUI : MonoBehaviour
     public GameObject ene2Shadow;
     public float blinkTime;
     public bool isBlinking;
-    
+    private changeUI _changeUI;
 
     // Start is called before the first frame update
     void Start(){
         MainCamera = Camera.main;
+        _changeUI = FindObjectOfType<changeUI>();
     }
     void Update(){
         transform.Rotate(new Vector3(0, 0, -0.5f));
@@ -25,6 +26,7 @@ public class targetUI : MonoBehaviour
     public void track(int x){
         if(x == 0){
             isBlinking = true;
+            _changeUI.changePlayer1();
             ene1Shadow.SetActive(true);
             StartCoroutine(BlinkChar(x));
             targetIndic.SetActive(true);
@@ -33,6 +35,7 @@ public class targetUI : MonoBehaviour
             StartCoroutine(delay(x));
         }
         else if(x == 1){
+            _changeUI.changePlayer2();
             isBlinking = true;
             ene2Shadow.SetActive(true);
             StartCoroutine(BlinkChar(x));
