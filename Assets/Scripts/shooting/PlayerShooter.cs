@@ -9,6 +9,7 @@ public class PlayerShooter : Shooter
     [SerializeField] private KeyCode shootKey = KeyCode.E;
     [SerializeField] private KeyCode targetChange = KeyCode.F;
     private Walking _walking;
+    private targetUI _targetUI;
 
     public bool IsCharging
     {
@@ -48,6 +49,7 @@ public class PlayerShooter : Shooter
     {
         base.Start();
         _walking = GetComponent<Walking>();
+        _targetUI = GetComponent<targetUI>();
     }
 
 
@@ -79,6 +81,8 @@ public class PlayerShooter : Shooter
     {
         if (!Input.GetKeyDown(targetChange)) return;
         TargetIndex += 1;
+        if (Input.GetKeyDown(targetChange)) _targetUI.track(TargetIndex);
+        
     }
 
     protected bool Shoot(bool fromAutoCharge = false)
