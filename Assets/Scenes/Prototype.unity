@@ -7644,8 +7644,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 7.3399997, y: 9.699999, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 5.24, y: 8, z: 1.5}
+  m_Center: {x: -0.55, y: -0.5, z: 0}
 --- !u!54 &4575030632258395554
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7718,7 +7718,7 @@ MonoBehaviour:
   speed: 5
   minEvadeDist: 1
   minDroppedDuration: 0
-  ballDetectRadius: 3.5
+  ballDetectRadius: 10
   DodgeballLayer: Dodgeball
 --- !u!114 &4575030632258395567
 MonoBehaviour:
@@ -7775,8 +7775,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 7.3399997, y: 9.699999, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 5.24, y: 8, z: 1.5}
+  m_Center: {x: -0.55, y: -0.5, z: 0}
 --- !u!114 &4575030632263372179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7892,7 +7892,7 @@ MonoBehaviour:
   speed: 5
   minEvadeDist: 1
   minDroppedDuration: 0
-  ballDetectRadius: 3.5
+  ballDetectRadius: 10
   DodgeballLayer: Dodgeball
 --- !u!4 &4575030632263372190
 Transform:
