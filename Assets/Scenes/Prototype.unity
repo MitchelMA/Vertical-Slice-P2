@@ -700,6 +700,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &152459490 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8929413024613030011, guid: dcaf9ce0e4c4fe4458668b5faa3340b0, type: 3}
+  m_PrefabInstance: {fileID: 1022018740}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &159903740
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -794,6 +805,7 @@ GameObject:
   - component: {fileID: 161473823}
   - component: {fileID: 161473822}
   - component: {fileID: 161473821}
+  - component: {fileID: 161473824}
   m_Layer: 5
   m_Name: player1
   m_TagString: Untagged
@@ -876,6 +888,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 161473819}
   m_CullTransparentMesh: 1
+--- !u!114 &161473824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 161473819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92fc1578ed41c474c837948f886b6e83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthSlider: {fileID: 199048695}
+--- !u!114 &199048695 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8929413024613030011, guid: dcaf9ce0e4c4fe4458668b5faa3340b0, type: 3}
+  m_PrefabInstance: {fileID: 1303359971}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &205489460
 GameObject:
   m_ObjectHideFlags: 0
@@ -1020,6 +1056,14 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8929413023548563291, guid: dcaf9ce0e4c4fe4458668b5faa3340b0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 8929413023548563291, guid: dcaf9ce0e4c4fe4458668b5faa3340b0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 8929413023548563291, guid: dcaf9ce0e4c4fe4458668b5faa3340b0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -1049,11 +1093,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8929413023548563291, guid: dcaf9ce0e4c4fe4458668b5faa3340b0, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -12.899963
+      value: -14
       objectReference: {fileID: 0}
     - target: {fileID: 8929413023548563291, guid: dcaf9ce0e4c4fe4458668b5faa3340b0, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.3
+      value: 3.9
       objectReference: {fileID: 0}
     - target: {fileID: 8929413023548563291, guid: dcaf9ce0e4c4fe4458668b5faa3340b0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1670,6 +1714,7 @@ GameObject:
   - component: {fileID: 429744533}
   - component: {fileID: 429744532}
   - component: {fileID: 429744531}
+  - component: {fileID: 429744534}
   m_Layer: 5
   m_Name: player2Long
   m_TagString: Untagged
@@ -1752,6 +1797,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 429744529}
   m_CullTransparentMesh: 1
+--- !u!114 &429744534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 429744529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92fc1578ed41c474c837948f886b6e83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthSlider: {fileID: 1448616515}
 --- !u!1001 &496130186
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2204,13 +2262,25 @@ MonoBehaviour:
   healthChange:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 161473824}
+        m_TargetAssemblyTypeName: Healthbar, Assembly-CSharp
+        m_MethodName: UpdateBars
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 932718840}
+        m_TargetAssemblyTypeName: Healthbar, Assembly-CSharp
+        m_MethodName: UpdateBars
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2337,7 +2407,7 @@ MonoBehaviour:
   speed: 5
   minEvadeDist: 1
   minDroppedDuration: 0.1
-  ballDetectRadius: 3
+  ballDetectRadius: 2.5
   boundsSide: 0
   DodgeballLayer: Dodgeball
 --- !u!114 &556438723
@@ -2591,6 +2661,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d182af40fb1766441af3854f02632886, type: 3}
   m_PrefabInstance: {fileID: 769195956}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &622281616 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8929413024613030011, guid: dcaf9ce0e4c4fe4458668b5faa3340b0, type: 3}
+  m_PrefabInstance: {fileID: 222846208}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &665254534
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3757,6 +3838,7 @@ GameObject:
   - component: {fileID: 932718839}
   - component: {fileID: 932718838}
   - component: {fileID: 932718837}
+  - component: {fileID: 932718840}
   m_Layer: 5
   m_Name: player1Long
   m_TagString: Untagged
@@ -3839,6 +3921,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 932718835}
   m_CullTransparentMesh: 1
+--- !u!114 &932718840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 932718835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92fc1578ed41c474c837948f886b6e83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthSlider: {fileID: 152459490}
 --- !u!1 &945320314
 GameObject:
   m_ObjectHideFlags: 0
@@ -4078,13 +4173,25 @@ MonoBehaviour:
   healthChange:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 1299886106}
+        m_TargetAssemblyTypeName: Healthbar, Assembly-CSharp
+        m_MethodName: UpdateBars
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 429744534}
+        m_TargetAssemblyTypeName: Healthbar, Assembly-CSharp
+        m_MethodName: UpdateBars
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -4211,7 +4318,7 @@ MonoBehaviour:
   speed: 5
   minEvadeDist: 1
   minDroppedDuration: 0.1
-  ballDetectRadius: 3
+  ballDetectRadius: 2.5
   boundsSide: 0
   DodgeballLayer: Dodgeball
 --- !u!114 &972554024
@@ -5173,6 +5280,7 @@ GameObject:
   - component: {fileID: 1299886105}
   - component: {fileID: 1299886104}
   - component: {fileID: 1299886103}
+  - component: {fileID: 1299886106}
   m_Layer: 5
   m_Name: player2
   m_TagString: Untagged
@@ -5255,6 +5363,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1299886101}
   m_CullTransparentMesh: 1
+--- !u!114 &1299886106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1299886101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92fc1578ed41c474c837948f886b6e83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthSlider: {fileID: 622281616}
 --- !u!1001 &1303359971
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5303,6 +5424,14 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8929413023548563291, guid: dcaf9ce0e4c4fe4458668b5faa3340b0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 8929413023548563291, guid: dcaf9ce0e4c4fe4458668b5faa3340b0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 8929413023548563291, guid: dcaf9ce0e4c4fe4458668b5faa3340b0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -5332,11 +5461,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8929413023548563291, guid: dcaf9ce0e4c4fe4458668b5faa3340b0, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -12.899963
+      value: -14
       objectReference: {fileID: 0}
     - target: {fileID: 8929413023548563291, guid: dcaf9ce0e4c4fe4458668b5faa3340b0, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.3
+      value: 3.9
       objectReference: {fileID: 0}
     - target: {fileID: 8929413023548563291, guid: dcaf9ce0e4c4fe4458668b5faa3340b0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5357,6 +5486,14 @@ PrefabInstance:
     - target: {fileID: 8929413024099570366, guid: dcaf9ce0e4c4fe4458668b5faa3340b0, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8929413024099570366, guid: dcaf9ce0e4c4fe4458668b5faa3340b0, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8929413024613030011, guid: dcaf9ce0e4c4fe4458668b5faa3340b0, type: 3}
+      propertyPath: m_Value
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcaf9ce0e4c4fe4458668b5faa3340b0, type: 3}
@@ -5694,6 +5831,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5188936233199314865, guid: 62bbe62935226794cbac471b579570a7, type: 3}
   m_PrefabInstance: {fileID: 542413517}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1448616515 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8929413024613030011, guid: dcaf9ce0e4c4fe4458668b5faa3340b0, type: 3}
+  m_PrefabInstance: {fileID: 1990376721}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1462156085
 PrefabInstance:
   m_ObjectHideFlags: 0
