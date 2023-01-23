@@ -64,7 +64,7 @@ public abstract class Shooter : MonoBehaviour
         other++;
         other %= 2;
         _targets = TeamsData.Instance[(Side) other].Members.ToArray();
-        counter.SetText(BallCount.ToString());
+        BallCount = ballCount;
     }
 
     protected virtual (float, Dodgeball) GetDodgeBall()
