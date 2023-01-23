@@ -237,6 +237,7 @@ MonoBehaviour:
   chargedDodgeball: {fileID: 8002621940253702343, guid: d3e94cd164ccf6341880107d9d753ceb, type: 3}
   shootKey: 101
   targetChange: 102
+  targetUI: {fileID: 0}
 --- !u!1001 &5188936234559571768
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -253,12 +254,24 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5188936233199314865, guid: 62bbe62935226794cbac471b579570a7, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5188936233199314865, guid: 62bbe62935226794cbac471b579570a7, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5188936233199314865, guid: 62bbe62935226794cbac471b579570a7, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5188936233199314865, guid: 62bbe62935226794cbac471b579570a7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.87
+      value: 2.8701172
       objectReference: {fileID: 0}
     - target: {fileID: 5188936233199314865, guid: 62bbe62935226794cbac471b579570a7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.9
+      value: 2.8999023
       objectReference: {fileID: 0}
     - target: {fileID: 5188936233199314865, guid: 62bbe62935226794cbac471b579570a7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -319,3 +332,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2436341404628979496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1391206536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3c2ea648da3524793f51a909a9adaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  height: -1.31
