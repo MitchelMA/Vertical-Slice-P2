@@ -10,6 +10,7 @@ public class PickUp : MonoBehaviour
 {
     private Dodgeball dodgeBall;
     public string[] pickUpAbleTags = new string[2];
+    private bool _pickedUp = false;
 
 
     void Start()
@@ -29,11 +30,14 @@ public class PickUp : MonoBehaviour
 
     private void HandleAny(GameObject hitObj)
     {
+        if (_pickedUp) return;
+        
         if (!pickUpAbleTags.Contains(hitObj.tag) || !dodgeBall.WasDropped ||
             !(dodgeBall.DroppedDuration > 1f)) return;
          
+         _pickedUp = true;
          var shooter = hitObj.GetComponent<Shooter>();
          shooter.BallCount += 1;
-         Destroy(gameObject);       
+         Destroy(gameObject);
     }
 }
