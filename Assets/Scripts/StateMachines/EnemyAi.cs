@@ -16,7 +16,6 @@ public class EnemyAi : MonoBehaviour
     [SerializeField] private float minEvadeDist = 1f;
     [SerializeField] private float minDroppedDuration = 0.1f;
     [SerializeField] private float ballDetectRadius = 4f;
-    [SerializeField] private Side boundsSide;
     [SerializeField] private string DodgeballLayer;
 
     private Vector4 _bounds;
@@ -32,7 +31,7 @@ public class EnemyAi : MonoBehaviour
         _baseMachine.FromEveryState = EveryStateHandler;
 
         _target = transform.position;
-        _bounds = Bounds.Instance[boundsSide];
+        _bounds = Bounds.Instance[side];
     }
 
     // Start is called before the first frame update
@@ -143,6 +142,9 @@ public class EnemyAi : MonoBehaviour
     [StateMethod((int) EnemyStates.Throw)]
     private EnemyStates HandleThrow()
     {
+        if (_shooter.IsThrowing)
+            return EnemyStates.Throw;
+        
         // get the other side
         int targetSide = (int)side;
         targetSide++;
@@ -155,12 +157,13 @@ public class EnemyAi : MonoBehaviour
             return EnemyStates.Idle;
         
         int target = Random.Range(0, l - 1);
-        print(target);
         
         // set the target
         _shooter.TargetIndex = target;
         // shoot at that target
         _shooter.Shoot(_chargeValue);
+        if (_shooter.IsThrowing)
+            return EnemyStates.Throw;
         
         return EnemyStates.Idle;
     }
