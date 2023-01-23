@@ -1950,6 +1950,33 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: -394, y: 2523}
+  - name: Laag 24
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 947
+      y: 775
+      width: 270
+      height: 179
+    spriteID: ca015b47e6e99b9468ec902550ef187d
+    internalID: 0
+    spriteBone:
+    - name: bone_1
+      position: {x: -101.00006, y: -37.73059, z: 0}
+      rotation: {x: 0, y: 0, z: 0.5643447, w: 0.8255393}
+      length: 136.77219
+      parentId: -1
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -114, y: 271}
   - name: rechterbeen6
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -2814,7 +2841,7 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 109, y: 238}
-  - name: Laag 24
+  - name: Laag 24_1
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -2841,7 +2868,29 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: -114, y: 271}
-  platformSettings: []
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
   mosaicLayers: 1
   documentPivot: {x: 0, y: 0}
   documentAlignment: 7
@@ -2952,7 +3001,7 @@ ScriptedImporter:
     layerID: 24
     mosaicPosition: {x: 482, y: 2969}
   - name: Laag 24
-    spriteName: Laag 24
+    spriteName: Laag 24_1
     isGroup: 0
     parentIndex: -1
     spriteID: ca015b47e6e99b9468ec902550ef187d

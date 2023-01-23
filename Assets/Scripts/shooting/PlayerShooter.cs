@@ -6,7 +6,9 @@ using UnityEngine;
 [RequireComponent(typeof(Walking))]
 public class PlayerShooter : Shooter
 {
+    [SerializeField] private KeyCode shootKey = KeyCode.E;
     [SerializeField] private KeyCode targetChange = KeyCode.F;
+    public targetUI targetUI;
     private Walking _walking;
 
     public bool IsCharging
@@ -23,7 +25,6 @@ public class PlayerShooter : Shooter
             if (prev)
             {
                 Shoot(false);
-                _walking.CurrentSpeed = _walking.speed;
             }
         }
     }
@@ -46,11 +47,8 @@ public class PlayerShooter : Shooter
     protected override void Start()
     {
         base.Start();
+        shootEnd.AddListener(ShootEnd);
         _walking = GetComponent<Walking>();
-        int other = (int) side;
-        other++;
-        other %= 2;
-        _targets = TeamsData.Instance[(Side)other].Members.ToArray();
     }
 
 
@@ -89,6 +87,12 @@ public class PlayerShooter : Shooter
         if (fromAutoCharge)
             _isCharging = false;
 
-        return base.Shoot();
+        StartCoroutine(base.Shoot());
+        return true;
+    }
+
+    private void ShootEnd()
+    {
+        _walking.CurrentSpeed = _walking.speed;
     }
 }
