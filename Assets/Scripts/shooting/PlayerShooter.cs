@@ -25,7 +25,6 @@ public class PlayerShooter : Shooter
             if (prev)
             {
                 Shoot(false);
-                _walking.CurrentSpeed = _walking.speed;
             }
         }
     }
@@ -48,6 +47,7 @@ public class PlayerShooter : Shooter
     protected override void Start()
     {
         base.Start();
+        shootEnd.AddListener(ShootEnd);
         _walking = GetComponent<Walking>();
     }
 
@@ -93,6 +93,12 @@ public class PlayerShooter : Shooter
         if (fromAutoCharge)
             _isCharging = false;
 
-        return base.Shoot();
+        StartCoroutine(base.Shoot());
+        return true;
+    }
+
+    private void ShootEnd()
+    {
+        _walking.CurrentSpeed = _walking.speed;
     }
 }

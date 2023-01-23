@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using Utils;
 using UnityEngine.Serialization;
 
 public class Walking : MonoBehaviour
@@ -21,12 +22,9 @@ public class Walking : MonoBehaviour
     private void Update()
     {
         HandleInput();
-        var moveVec = CurrentSpeed * Time.deltaTime * _input;
-
-        var nextPos = transform.position + new Vector3(moveVec.x, 0, moveVec.y);
         
-        if(nextPos.IsInBounds(_bounds))
-            transform.Translate(new Vector3(moveVec.x, 0, moveVec.y));
+        var moveVec = CurrentSpeed * Time.deltaTime * _input;
+        transform.Translate(new Vector3(moveVec.x, 0, moveVec.y), _bounds);
     }
 
 
