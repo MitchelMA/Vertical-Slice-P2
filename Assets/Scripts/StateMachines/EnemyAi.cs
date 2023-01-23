@@ -34,12 +34,6 @@ public class EnemyAi : MonoBehaviour
         _bounds = Bounds.Instance[side];
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        Debug.Log(Bounds.Instance[Side.Right]);
-    }
-
     private void FixedUpdate()
     {
         _baseMachine.GetNext();
@@ -170,7 +164,6 @@ public class EnemyAi : MonoBehaviour
     
     private void StateChangedListener(EnemyStates old, EnemyStates current)
     {
-        Debug.Log($"State-Changed: {old} -> {current}");
         Vector3 curPos = transform.position;
 
         // preparations for switching to the states moving and evading
