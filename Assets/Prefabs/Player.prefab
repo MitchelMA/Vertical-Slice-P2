@@ -117,10 +117,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 262f3fb19abd3464bba61bee8e56441a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwSpeed: 10
+  throwSpeed: 20
   ballCount: 2
   targetIndex: 0
-  chargedValue: 2
+  chargedValue: 1
   counter: {fileID: 1573557020218034610}
   counterContainer: {fileID: 6329832071874825299}
   side: 1
@@ -147,6 +147,7 @@ MonoBehaviour:
       m_Calls: []
   shootKey: 101
   targetChange: 102
+  targetUI: {fileID: 0}
 --- !u!95 &6856264449224245199
 Animator:
   serializedVersion: 3
