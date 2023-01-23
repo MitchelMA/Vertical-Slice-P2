@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
+using UnityEditor.U2D.Animation;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.Serialization;
 
-[RequireComponent(typeof(BoxCollider))]
 public abstract class Shooter : MonoBehaviour
 {
     [SerializeField] protected float throwSpeed = 2f;
@@ -15,12 +18,17 @@ public abstract class Shooter : MonoBehaviour
     [SerializeField] protected Side side;
     [SerializeField] protected Dodgeball dodgeball;
     [SerializeField] protected Dodgeball chargedDodgeball;
-    [SerializeField] protected KeyCode shootKey = KeyCode.E;
+    [SerializeField] protected float throwTimeout = 0.5f;
+
+    public UnityEvent shootStart = new UnityEvent();
+    public UnityEvent shootEnd = new UnityEvent();
+    
+    protected Vector3 BallSpawnPosition => ((int) side * 2 - 1) *  Vector3.right;
 
     protected Character[] _targets;
-    protected BoxCollider _collider;
     protected bool _isCharging = false;
     protected float _chargeTimer;
+    public bool IsThrowing { get; private set; } = false;
 
     public int BallCount
     {
@@ -52,31 +60,50 @@ public abstract class Shooter : MonoBehaviour
     // Start is called before the first frame update
     protected virtual void Start()
     {
-        _collider = GetComponent<BoxCollider>();
-        counter.SetText(BallCount.ToString());
+        int other = (int) side;
+        other++;
+        other %= 2;
+        _targets = TeamsData.Instance[(Side) other].Members.ToArray();
+        BallCount = ballCount;
     }
 
     protected virtual (float, Dodgeball) GetDodgeBall()
     {
         if (_chargeTimer > chargedValue)
             return (2, chargedDodgeball);
-        
+
         return (1, dodgeball);
     }
 
-    protected virtual bool Shoot()
+    protected virtual IEnumerator Shoot()
     {
-        if (BallCount <= 0)
-            return false;
+        if (IsThrowing)
+        {
+            shootEnd.Invoke();
+            yield break;
+        }
 
+        if (BallCount <= 0)
+        {
+            shootEnd.Invoke();
+            yield break;
+        }
+        
+        IsThrowing = true;
+        
         Vector3 dir = CurrentTarget.transform.position - transform.position;
 
         var (speedMult, ball) = GetDodgeBall();
-        var clone = Instantiate(ball);
-        clone.Setup(dir, transform.position + transform.right, throwSpeed * speedMult);
-
+        
+        shootStart.Invoke();
+        yield return new WaitForSeconds(throwTimeout);
+        
         BallCount -= 1;
         _chargeTimer = 0;
-        return true;
+        var clone = Instantiate(ball);
+        clone.Setup(dir, transform.position + BallSpawnPosition, throwSpeed * speedMult);
+        
+        shootEnd.Invoke();
+        IsThrowing = false;
     }
 }
