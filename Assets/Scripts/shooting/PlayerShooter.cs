@@ -8,7 +8,6 @@ public class PlayerShooter : Shooter
 {
     [SerializeField] private KeyCode shootKey = KeyCode.E;
     [SerializeField] private KeyCode targetChange = KeyCode.F;
-    public targetUI targetUI;
     private Walking _walking;
 
     public bool IsCharging
@@ -78,6 +77,11 @@ public class PlayerShooter : Shooter
 
     public void UpdateTarget()
     {
+        if (Input.GetKeyDown(targetChange))
+        {
+            Debug.Log(TargetIndex);
+        }
+
         if (!Input.GetKeyDown(targetChange)) return;
         TargetIndex += 1;
     }
