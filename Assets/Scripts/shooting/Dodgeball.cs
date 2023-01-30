@@ -33,6 +33,13 @@ public class Dodgeball : MonoBehaviour
                 _droppedDuration = 0;
 
             _wasDropped = value;
+
+            if (_wasDropped)
+            {
+                if (!_audioSource.isPlaying)
+                    _audioSource.Play();
+            }
+
             rigidBody.useGravity = _wasDropped;
             _speed = 0f;
             GetComponent<Transform>().localScale = new Vector3(0.25f, 0.25f, 0.25f);
@@ -84,17 +91,11 @@ public class Dodgeball : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (!_audioSource.isPlaying)
-            _audioSource.Play();
-
         HandleAny(collision.gameObject);
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (!_audioSource.isPlaying)
-            _audioSource.Play();
-
         HandleAny(collision.gameObject);
     }
 
