@@ -12,13 +12,13 @@ public class Dodgeball : MonoBehaviour
     private Vector3 _dir;
     public string[] effectTags = new string[2];
 
-    [SerializeField]
-    private Rigidbody rigidBody;
+    [SerializeField] private Rigidbody rigidBody;
+    [SerializeField] private AudioSource _audioSource;
     private bool _wasDropped;
     private float _droppedDuration = 0f;
 
     private bool _hasHitAny = false;
-    
+
     public float DroppedDuration => _droppedDuration;
 
     public bool WasDropped
@@ -33,23 +33,32 @@ public class Dodgeball : MonoBehaviour
                 _droppedDuration = 0;
 
             _wasDropped = value;
+
+            if (_wasDropped)
+            {
+                if (!_audioSource.isPlaying)
+                    _audioSource.Play();
+            }
+
             rigidBody.useGravity = _wasDropped;
             _speed = 0f;
-            GetComponent<Transform>().localScale = new Vector3(0.25f,0.25f,0.25f);
+            GetComponent<Transform>().localScale = new Vector3(0.25f, 0.25f, 0.25f);
         }
     }
 
     // The speed of the dodgeball
     public float Speed => _speed;
+
     // The normalized direction vector
     public Vector3 Direction => _dir;
+
     // The movement of the dodgeball
     public Vector3 Movement => _dir * _speed;
 
     // Start is called before the first frame update
     private IEnumerator Start()
     {
-        _wasDropped=false;
+        _wasDropped = false;
 
         if (TryGetComponent<SphereCollider>(out var collider))
         {

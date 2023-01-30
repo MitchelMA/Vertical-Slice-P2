@@ -99,6 +99,5 @@ public class Character : MonoBehaviour
     public void TakeDamage(int amount)
     {
         CurrentHealth -= amount;
-        Debug.Log(CurrentHealth);
     }
 }
